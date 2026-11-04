@@ -35,12 +35,19 @@ class ChatGPTPluginTests(unittest.TestCase):
     def test_manifest_icon_and_starter_prompts(self):
         p = json.loads((ROOT / "plugin.json").read_text(encoding="utf-8"))
         interface = p["extensions"]["com.openai"]["interface"]
-        self.assertEqual(p["version"], "1.1.0")
+        self.assertEqual(p["version"], "1.2.0")
         self.assertLessEqual(len(interface["shortDescription"]), 30)
         self.assertEqual(len(interface["defaultPrompt"]), 3)
         self.assertTrue(all(len(prompt) <= 128 for prompt in interface["defaultPrompt"]))
         self.assertTrue((ROOT / interface["logo"].lstrip("./")).is_file())
         self.assertEqual(interface["logo"], interface["composerIcon"])
+
+    def test_offline_plugin_does_not_require_mcp(self):
+        p = json.loads((ROOT / "plugin.json").read_text(encoding="utf-8"))
+        self.assertEqual(p["version"], "1.2.0")
+        self.assertTrue((ROOT / "local-mcp" / "server.py").is_file())
+        self.assertNotIn("mcpServers", p)
+        self.assertIn("privacyPolicyURL", p["extensions"]["com.openai"]["interface"])
 
     def test_packaged_corpus_matches_canonical(self):
         bundled = SKILL / "references"

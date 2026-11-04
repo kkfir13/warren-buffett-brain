@@ -1,10 +1,10 @@
 # Public Warren Buffett Brain MCP server
 
-This directory contains a production-oriented **read-only MCP Streamable HTTP server**, designed for Cloudflare Workers. The source of truth is the GitHub repository's `knowledge/atlas.json`; the 55 original research notes and 60 source links are bundled into the Worker at build time. No account, brokerage connection, ValuEdge API, server secret, paid AI inference, or user data are required for end users.
+This directory contains an **optional, independently deployable** read-only MCP Streamable HTTP reference server for Cloudflare Workers. It is not deployed and is not part of the default plugin. The source of truth is the GitHub repository's `knowledge/atlas.json`; the 55 original research notes and 60 source links are bundled into the Worker at build time. No account, brokerage connection, ValuEdge API, server secret, paid AI inference, or user data are required for end users.
 
 ## Important status
 
-**Source code is ready. A public MCP endpoint does not yet exist until the owner deploys it.** Do not advertise an example URL as working.
+**Optional reference implementation only. There is no active public Buffett Brain MCP endpoint hosted by this repository.** The earlier experimental deployment using ValuEdge resources was disabled. The default product is a [zero-backend Skills-only ChatGPT plugin](../CHATGPT.md), and users can run the [local MCP adapter](../local-mcp/README.md) without a server subscription.
 
 The static GitHub Pages website cannot serve MCP POST requests. A personal skills-only ChatGPT plugin is also **not** a public MCP server.
 
@@ -58,7 +58,7 @@ On supported ChatGPT surfaces, go to **Plugins → Add custom MCP server**, ente
 
 ## Submit publicly to the Plugins Directory
 
-Open the [OpenAI Plugins submission portal](https://platform.openai.com/plugins) under the correct verified organization with **Apps Management: Write**. Choose **With MCP**, not **Skills only**. The public submission can include the open-source skill in `skills/warren-buffett-brain/`. The existing private skills-only plugin is a *separate item*: do not assume it is a public listing, and do not try to add an MCP server to a previous skills-only public submission.
+Open the [OpenAI Plugins submission portal](https://platform.openai.com/plugins) under the correct verified organization with **Apps Management: Write**. Choose **With MCP**, not **Skills only**. The public submission can include the open-source skill in `skills/warren-buffett-brain/`. A future public remote MCP plugin would be a *separate item*: do not assume it is a public listing, and do not try to add an MCP server to a previous skills-only public submission.
 
 The public review requires control of the host. When the portal gives a challenge token, set a Worker secret or variable named `OPENAI_APPS_CHALLENGE` to the exact token and confirm:
 `https://YOUR-CLOUDFLARE-HOSTNAME/.well-known/openai-apps-challenge` returns only that value. Example command:

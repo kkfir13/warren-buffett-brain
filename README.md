@@ -4,9 +4,15 @@
 
 Warren Buffett Brain is an independent, open-source investment research library and AI skill. It helps you study historical Buffett decisions—and ask better questions about companies you research today.
 
-[**Start researching in ChatGPT →**](CHATGPT.md) · [Explore the original case studies](https://kkfir13.github.io/warren-buffett-brain/cases/) · [Browse the source archive](https://kkfir13.github.io/warren-buffett-brain/) · [View the AI skill](skills/warren-buffett-brain/SKILL.md)
+[**Use Warren Buffett Brain in ChatGPT →**](CHATGPT.md) · [Download the Skills-only plugin](dist/warren-buffett-brain-chatgpt-plugin.zip) · [Explore the original case studies](https://kkfir13.github.io/warren-buffett-brain/cases/) · [Browse the source archive](https://kkfir13.github.io/warren-buffett-brain/) · [View the AI skill](skills/warren-buffett-brain/SKILL.md)
 
 > **ChatGPT availability:** The Buffett Brain plugin package exists, but it is **not publicly listed** in the ChatGPT Plugins Directory yet. You can try the research prompt below in ChatGPT now; that does not install the plugin or automatically load its bundled reference files. The installable skill will be available to other users only after directory approval and publication.
+
+## No hosted backend — the research travels with the skill
+
+**No Supabase, no ValuEdge servers, no paid inference API, and no always-on backend are needed** for the Buffett Brain plugin. Its historical research notes and original case studies are packaged with the Skills-only ZIP. ChatGPT itself remains an online product; "offline" here means **no dedicated server for the plugin**, not that ChatGPT works without an internet connection.
+
+Advanced desktop MCP users can instead use the [local stdio MCP](local-mcp/README.md), which runs on their own device using Python and needs no hosting. A remote MCP is **not** included in the main ZIP.
 
 ## Try it in ChatGPT right now — no installation
 
@@ -47,7 +53,7 @@ When you need actual fair-value estimates, margin-of-safety calculations, a stoc
 - **55** original historical research notes across Berkshire decisions, investing principles, mistakes, books and brief attributed statements.
 - **60** external source links, including the official Berkshire shareholder-letter archive covering 1977–2024. *Links are not complete copies of the letters or evidence that every letter has been fully reviewed.*
 - **Eight** original source-linked investment case studies, from GEICO and See's Candies to Goldman Sachs, BNSF and admitted errors.
-- A self-hostable [research website](https://kkfir13.github.io/warren-buffett-brain/), [ChatGPT-ready skill](skills/warren-buffett-brain/SKILL.md), offline search tool, documented methodology and unit tests.
+- A zero-hosting [local MCP desktop adapter](local-mcp/README.md), plus a self-hostable [research website](https://kkfir13.github.io/warren-buffett-brain/), [ChatGPT-ready skill](skills/warren-buffett-brain/SKILL.md), offline search tool, documented methodology and unit tests.
 
 **Independent project:** not affiliated with, endorsed by or operated by Warren Buffett or Berkshire Hathaway. Benjamin Graham wrote *The Intelligent Investor*; Charlie Munger and Alice Schroeder have distinct works and views. Original content and code are MIT-licensed; books, letters, transcripts and other third-party materials retain their rights. Educational research only, not investment advice.
 

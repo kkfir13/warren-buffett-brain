@@ -24,11 +24,17 @@ Do not invent current market prices or Buffett quotes. Finish with the three mos
 
 ## Option 2 — Use the Buffett Brain skill when it becomes publicly available
 
-The [Buffett Brain plugin package](dist/warren-buffett-brain-chatgpt-plugin.zip) includes a skills-only workflow and a curated source-linked reference set. It currently exists as a **private plugin**, not a publicly installable listing.
+The [Buffett Brain plugin package](dist/warren-buffett-brain-chatgpt-plugin.zip) is a **Skills-only** archive with its historical research corpus bundled. It does **not** connect to a remote MCP endpoint or consume ValuEdge infrastructure. It currently exists as a **private plugin**, not a publicly installable listing.
 
 **After directory review and publication**, users with eligible access can open ChatGPT's **Plugins** directory, search for **Warren Buffett Brain**, review it, and install it. A public install link will be added here only after it is confirmed.
 
 The skill adds a disciplined framework and bundled historical notes. It does **not** provide live securities prices, trade execution or access to personal accounts.
+
+## Option 3 — Use offline MCP on a compatible desktop client
+
+Users who want an MCP server rather than the ChatGPT plugin can use the [local no-hosting MCP adapter](local-mcp/README.md). This is an **advanced desktop setup**, not an automatically available ChatGPT web connection. It runs from the open-source repository with Python and the user's own machine, at no ongoing hosting cost.
+
+**Important:** The former experimental public endpoint on a ValuEdge Supabase project was decommissioned; do not try to connect to it.
 
 ## Example questions
 

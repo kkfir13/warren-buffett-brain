@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "warren-buffett-brain",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Open-source, source-linked Warren Buffett and Berkshire Hathaway investment research for ChatGPT: real decisions, investing principles, historical mistakes and Buffett-inspired stock analysis.",
   "author": {
     "name": "Kfir Aharon",
@@ -24,25 +24,27 @@
       "interface": {
         "displayName": "Warren Buffett Brain",
         "shortDescription": "Buffett-style stock research",
-        "longDescription": "Research Warren Buffett's and Berkshire Hathaway's documented deals, shareholder letters, mistakes and investment principles using original, source-linked case studies. Apply an evidence-led Buffett-inspired checklist to public stocks. The skill is free, independent and not affiliated with Buffett. It does not include live prices or personal portfolio access; a separate data connection is optional.",
+        "longDescription": "Independent, source-linked Warren Buffett and Berkshire Hathaway research, bundled for ChatGPT as an evidence-led skill. Study real decisions, historical mistakes, moats and cash-flow reasoning; challenge stock-investment theses. The research works without any dedicated server, account, or ValuEdge connection. Optional external financial-data tools may help with dated valuations and screening. No live quote feed, brokerage access or Buffett endorsement.",
         "developerName": "Kfir Aharon",
         "category": "Finance",
         "capabilities": [
-          "Explain historic Berkshire decisions and mistakes with source links",
-          "Analyze businesses with a Buffett-inspired value-investing checklist",
-          "Challenge moat, cash-flow, valuation assumptions and downside cases"
+          "Study documented Berkshire Hathaway decisions with primary-source links",
+          "Analyze moats, owner-like cash flow and management stewardship",
+          "Challenge valuations and investment theses with counterarguments"
         ],
         "websiteURL": "https://kkfir13.github.io/warren-buffett-brain/",
         "supportURL": "https://github.com/kkfir13/warren-buffett-brain/issues",
         "defaultPrompt": [
-          "Why did Buffett buy GEICO? Explain his research, the risks and primary sources.",
-          "Research MSFT's moat and cash flows using Buffett-inspired principles.",
-          "Challenge my thesis for GOOGL: business quality versus a sensible price."
+          "Why did Buffett invest in GEICO? Use primary-source links and challenge the interpretation.",
+          "Analyze the moat, owner earnings and risks of a business I name, using Buffett-inspired principles.",
+          "Where did Buffett make costly mistakes, and what can investors learn from the original record?"
         ],
         "logo": "./assets/wbb-icon.svg",
         "composerIcon": "./assets/wbb-icon.svg",
         "brandColor": "#315941",
-        "brandColorDark": "#A8CFB6"
+        "brandColorDark": "#A8CFB6",
+        "privacyPolicyURL": "https://kkfir13.github.io/warren-buffett-brain/privacy/",
+        "termsOfServiceURL": "https://kkfir13.github.io/warren-buffett-brain/terms/"
       }
     }
   }
