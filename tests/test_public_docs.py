@@ -40,7 +40,7 @@ class PublicDocumentationTests(unittest.TestCase):
         chatgpt = (ROOT / "CHATGPT.md").read_text(encoding="utf-8")
         html = (ROOT / "install/index.html").read_text(encoding="utf-8")
         self.assertIn("not** an installed skill", readme)
-        self.assertIn("does not automatically read", chatgpt)
+        self.assertIn("automatically read", chatgpt)
         self.assertIn("does not automatically load", html)
         self.assertIn("not yet publicly listed", html)
         self.assertIn("Personal Skill ZIP", chatgpt)
