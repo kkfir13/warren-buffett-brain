@@ -5,6 +5,8 @@ on:
     paths:
       - '.github/workflows/build-skills-release.yml'
       - 'scripts/build_personal_skill.py'
+      - 'skills/warren-buffett-brain/SKILL.md'
+      - 'plugin.json'
   workflow_dispatch:
 permissions:
   contents: write
@@ -33,17 +35,25 @@ jobs:
               assert z.testzip() is None
               assert 'mcp.json' not in z.namelist()
               assert '.mcp.json' not in z.namelist()
-              assert json.loads(z.read('plugin.json'))['version']=='1.2.0'
+              assert json.loads(z.read('plugin.json'))['version']=='1.3.0'
               data=json.loads(z.read('skills/warren-buffett-brain/references/atlas.json'))
               assert len(data['entries'])==55 and len(data['sources'])==60
-          print('Verified Skills-only 1.2.0 — no remote MCP dependency')
+          print('Verified Skills-only 1.3.0 — no remote MCP dependency')
           PY
+      - name: Keep downloadable release available if Git push is temporarily unavailable
+        uses: actions/upload-artifact@v4
+        with:
+          name: buffett-brain-skills-release-1.3.0
+          path: |
+            dist/warren-buffett-brain-chatgpt-plugin.zip
+            dist/warren-buffett-brain-personal-skill.zip
+          retention-days: 2
       - name: Commit public release archive
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add dist/warren-buffett-brain-chatgpt-plugin.zip dist/warren-buffett-brain-personal-skill.zip
           if ! git diff --cached --quiet; then
-            git commit -m "Publish standalone Buffett Brain skills-only 1.2.0 ZIP"
+            git commit -m "Publish standalone Buffett Brain skills-only 1.3.0 ZIP"
             git push origin HEAD:main
           fi

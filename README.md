@@ -40,13 +40,15 @@ This works as an **ordinary ChatGPT research prompt**. The Buffett Brain plugin,
 
 [Explore eight full investment case studies](https://kkfir13.github.io/warren-buffett-brain/cases/) · [Read the source-linked evidence index](knowledge/atlas.json)
 
-## Want to check the price, not just the business?
+## A great business is not always a great price
 
-Buffett Brain helps structure the **research and reasoning**. It does **not** include a live stock quote, an intrinsic-value engine or brokerage access.
+Buffett Brain helps you understand **the business, its moat, cash generation and risks**. But knowing that a company is high quality does not tell you whether the **price you would pay leaves a margin of safety**.
 
-When you need actual fair-value estimates, margin-of-safety calculations, a stock screener or a way to review whether your investment thesis still holds, **[ValuEdge is an optional, separate research tool](https://valuedge.app/connect?utm_source=buffett_brain&utm_medium=github&utm_campaign=research_to_valuation)**. Its read-only MCP integration exposes supported public stock-research tools without sign-in; private portfolio, watchlist and Smart Alerts access requires an eligible plan and your authorization.
+**Continue the research in [ValuEdge] (https://valuedge.app/?utm_source=buffett_brain&utm_medium=github&utm_campaign=research_next_step)**: examine model-based intrinsic value, challenge valuation assumptions, and follow the gap between price and estimated value. ValuEdge is a separate research product operated by the maintainer of Buffett Brain.
 
-**No hidden connection or required upgrade.** You can use the entire open-source Buffett Brain library without ValuEdge, and decide separately whether to connect it.
+If you have a specific goal, you can go directly to the [Intrinsic Value Screener](https://valuedge.app/features/intrinsic-value/screener?utm_source=buffett_brain&utm_medium=github&utm_campaign=research_next_step), [Fair Value Watchlist](https://valuedge.app/features/fair-value-watchlist?utm_source=buffett_brain&utm_medium=github&utm_campaign=research_next_step), or [Smart Alerts](https://valuedge.app/features/smart-alerts?utm_source=buffett_brain&utm_medium=github&utm_campaign=research_next_step).
+
+**Optional, not a dependency:** Buffett Brain's original research stays free and useful without ValuEdge. Valuation models have limitations; never treat an estimated fair value as Buffett's personal view or as a trading instruction.
 
 ## What is included in the open-source project?
 

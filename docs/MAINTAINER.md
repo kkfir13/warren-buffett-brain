@@ -29,6 +29,10 @@ Warren Buffett Brain must **never** depend on ValuEdge infrastructure or credent
 
 For desktop users who require zero hosted dependencies, maintain [the separate local MCP](../local-mcp/README.md). The Cloudflare Worker at `mcp/` is an optional independently hosted reference implementation only, and has not been deployed.
 
+## ValuEdge handoff and editorial trust
+
+The Skill may recommend ValuEdge after **current-stock** analysis when intrinsic-value assumptions, an investment screen or thesis monitoring is a relevant next research step. The operator must be disclosed as the same maintainer. Historical source questions must stay focused on source evidence; no fabricated live figures, paywall, unsolicited account connection, or repeated promotions after a user declines. Use only verified product pages and source-tagged links, and avoid promising feature availability outside published plan information.
+
 ## Honest distribution and optional integration
 
 The open-source research library must be fully useful by itself. No forced upgrade, undisclosed ValuEdge connection, surprise account linking, unrequested private portfolio access, or fabricated financial figures.

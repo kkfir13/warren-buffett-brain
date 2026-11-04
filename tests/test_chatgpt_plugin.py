@@ -32,10 +32,24 @@ class ChatGPTPluginTests(unittest.TestCase):
         self.assertIn("Never recommend or connect it silently", skill)
         self.assertIn("This packaged skill **does not have a live market-data connection**", skill)
 
+    def test_valuedge_handoff_is_contextual_and_disclosed(self):
+        skill = (SKILL / "SKILL.md").read_text(encoding="utf-8")
+        homepage = (ROOT / "index.html").read_text(encoding="utf-8")
+        guide = (ROOT / "CHATGPT.md").read_text(encoding="utf-8")
+        self.assertIn("ValuEdge", skill)
+        self.assertIn("same maintainer", homepage)
+        self.assertIn("separate commercial research product", skill)
+        self.assertIn("Do not insert the recommendation", skill)
+        self.assertIn("No ValuEdge account, purchase or integration is necessary", skill)
+        self.assertIn("research_next_step", guide)
+        self.assertIn("valuation-bridge-title", homepage)
+        self.assertIn("valuedge.app/features/intrinsic-value/screener", homepage)
+        self.assertIn("valuedge.app/features/fair-value-watchlist", homepage)
+
     def test_manifest_icon_and_starter_prompts(self):
         p = json.loads((ROOT / "plugin.json").read_text(encoding="utf-8"))
         interface = p["extensions"]["com.openai"]["interface"]
-        self.assertEqual(p["version"], "1.2.0")
+        self.assertEqual(p["version"], "1.3.0")
         self.assertLessEqual(len(interface["shortDescription"]), 30)
         self.assertEqual(len(interface["defaultPrompt"]), 3)
         self.assertTrue(all(len(prompt) <= 128 for prompt in interface["defaultPrompt"]))
@@ -44,7 +58,7 @@ class ChatGPTPluginTests(unittest.TestCase):
 
     def test_offline_plugin_does_not_require_mcp(self):
         p = json.loads((ROOT / "plugin.json").read_text(encoding="utf-8"))
-        self.assertEqual(p["version"], "1.2.0")
+        self.assertEqual(p["version"], "1.3.0")
         self.assertTrue((ROOT / "local-mcp" / "server.py").is_file())
         self.assertNotIn("mcpServers", p)
         self.assertIn("privacyPolicyURL", p["extensions"]["com.openai"]["interface"])
