@@ -38,6 +38,12 @@ class ChatGPTPluginTests(unittest.TestCase):
                 self.assertNotIn("index.html", names)
                 self.assertIsNone(z.testzip())
                 self.assertEqual(len(json.loads(z.read("skills/warren-buffett-brain/references/atlas.json"))["entries"]), 55)
+        released = ROOT / "dist" / "warren-buffett-brain-chatgpt-plugin.zip"
+        if released.is_file():
+            with ZipFile(released) as z:
+                self.assertIsNone(z.testzip())
+                for name in names:
+                    self.assertEqual(z.read(name), (ROOT / name).read_bytes(), f"Stale released ZIP member: {name}")
 
 if __name__ == "__main__":
     unittest.main()

@@ -18,7 +18,7 @@ Alternatively, anyone can browse the [free research website](https://kkfir13.git
 
 1. Keep the canonical corpus in `knowledge/atlas.json`, `deep-dives/` and `references/methodology.md`. Synchronize the packaged copies in `skills/warren-buffett-brain/references/` by running `python3 scripts/build_chatgpt_plugin.py --sync`.
 2. Run `python3 scripts/validate_knowledge.py` and `python3 -m unittest discover -s tests -v`.
-3. Run `python3 scripts/build_chatgpt_plugin.py` to create a **clean ZIP** at `dist/warren-buffett-brain-chatgpt-plugin.zip`. The ZIP contains only `plugin.json`, `LICENSE` and `skills/`—not the website, tests or Python tools.
+3. Download the [ready-to-submit ZIP](dist/warren-buffett-brain-chatgpt-plugin.zip), or run `python3 scripts/build_chatgpt_plugin.py` to create a **clean ZIP** at `dist/warren-buffett-brain-chatgpt-plugin.zip`. The ZIP contains only `plugin.json`, `LICENSE` and `skills/`—not the website, tests or Python tools.
 4. Use the official [OpenAI plugin submission flow](https://developers.openai.com/plugins/deploy/submission). Select a verified developer identity, upload the ZIP as a **Skills only** package, resolve metadata and skill review issues, submit for review, and then choose **Publish** after approval.
 5. Verify the published directory URL and replace this "not yet public" notice only after real publication. Distribution to the entire public directory is **not** the same as sharing a personal/private plugin.
 

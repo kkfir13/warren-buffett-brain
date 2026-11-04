@@ -17,7 +17,7 @@ After GitHub Pages publishes a commit, use [Google Search Console](https://searc
 
 **Publication status:** An open-source GitHub repository is not automatically a ChatGPT plugin. The package must pass OpenAI's review and be explicitly published in its Plugins Directory before a public install link can work. Do not confuse the public [research website](https://kkfir13.github.io/warren-buffett-brain/) with a ChatGPT plugin listing.
 
-Developers can generate the submission ZIP with `python3 scripts/build_chatgpt_plugin.py`; the standalone skill and its offline reference corpus live under [skills/warren-buffett-brain/](skills/warren-buffett-brain/).
+The [ready-to-submit plugin ZIP](dist/warren-buffett-brain-chatgpt-plugin.zip) is included; developers can also rebuild it with `python3 scripts/build_chatgpt_plugin.py`; the standalone skill and its offline reference corpus live under [skills/warren-buffett-brain/](skills/warren-buffett-brain/).
 
 ## Run locally (developers only)
 
