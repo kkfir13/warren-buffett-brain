@@ -1,0 +1,33 @@
+name: Validate Cloudflare Worker MCP before deployment
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'mcp/worker.ts'
+      - '.github/workflows/mcp-validate-worker.yml'
+permissions:
+  contents: read
+jobs:
+  compile-and-test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install exact declared dependencies
+        working-directory: mcp
+        run: npm install --no-audit --no-fund
+      - name: Compile Cloudflare Worker without deploying
+        working-directory: mcp
+        run: npx wrangler deploy --dry-run --outdir /tmp/buffett-worker-build
+      - name: Start local Workerd and test MCP tools
+        working-directory: mcp
+        run: |
+          npx wrangler dev --local --port 8788 > /tmp/buffett-worker.log 2>&1 &
+          for i in $(seq 1 40); do
+            if curl -fsS http://127.0.0.1:8788/health > /dev/null; then break; fi
+            sleep 1
+          done
+          node ../tests/mcp-worker-smoke.mjs || { cat /tmp/buffett-worker.log; exit 1; }

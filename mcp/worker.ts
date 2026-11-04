@@ -75,9 +75,21 @@ export default {
       });
     }
     if (!["POST", "GET", "DELETE"].includes(request.method)) return new Response("Method not allowed", { status: 405 });
-    // Fresh server + stateless transport per request, not shared across clients.
+    // Reject hostile browser origins. Server-to-server MCP clients may send no Origin.
+    const origin = request.headers.get("origin");
+    if (origin && !allowedOrigins.has(origin)) {
+      return new Response("Origin not allowed", { status: 403 });
+    }
+    const contentLength = Number(request.headers.get("content-length") ?? "0");
+    if (Number.isFinite(contentLength) && contentLength > 32768) {
+      return new Response("Request too large", { status: 413 });
+    }
+    // A new McpServer AND stateless transport for each HTTP request.
+    // ChatGPT calls initialize, tools/list and tools/call as separate HTTP requests.
     const server = mcpServer();
-    const transport = new WebStandardStreamableHTTPServerTransport();
+    const transport = new WebStandardStreamableHTTPServerTransport({
+      sessionIdGenerator: undefined
+    });
     await server.connect(transport);
     try {
       const response = await transport.handleRequest(request);

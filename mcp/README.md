@@ -8,6 +8,39 @@ This directory contains an **optional, independently deployable** read-only MCP 
 
 The static GitHub Pages website cannot serve MCP POST requests. A personal skills-only ChatGPT plugin is also **not** a public MCP server.
 
+## Deploy directly from the existing GitHub repository (recommended)
+
+Cloudflare Workers Builds can deploy this **subdirectory of the existing monorepo**. You do not need a separate repository, a GitHub Actions deploy token, a ValuEdge account, or an MCP Plugin ZIP.
+
+1. Open [Cloudflare Workers & Pages](https://dash.cloudflare.com/) → **Create application** → **GitHub**.
+2. Authorize Cloudflare access to `kkfir13/warren-buffett-brain` (restrict GitHub repository access to this repository where possible).
+3. Select `kkfir13/warren-buffett-brain`, production branch `main`.
+4. Enter the build settings exactly:
+
+   - **Worker name:** `warren-buffett-brain-mcp` (must match `mcp/wrangler.jsonc`)
+   - **Root directory:** `mcp` (not `/` and not the GitHub Pages website)
+   - **Build command:** `npm install --no-audit --no-fund` (if Cloudflare auto-installs dependencies, this may be left empty)
+   - **Deploy command:** `npx wrangler deploy`
+
+5. Select **Save and Deploy**. Cloudflare will assign a real public hostname on `workers.dev`, with the endpoint **`https://ACTUAL-ASSIGNED-HOST/mcp`**. Never present the placeholder as a deployed URL.
+6. Test **`https://ACTUAL-ASSIGNED-HOST/health`** in the browser. Expect JSON with `status: ok` and `notes: 55`; a browser GET to `/mcp` is *not* a valid connection test.
+7. Test with [MCP Inspector](https://github.com/modelcontextprotocol/inspector) using **Streamable HTTP**, no authentication: Connect → List Tools (expect `search`, `fetch`, `research_overview`) → call `search` with `{"query":"GEICO"}` → call `fetch` with an actual returned ID.
+8. On an eligible ChatGPT account or workspace, go to [Plugins](https://chatgpt.com/plugins) → **+ → Add custom MCP server**; give it the name Warren Buffett Brain and the **actual** `/mcp` URL, set no authentication, acknowledge the server risk warning and confirm the discovered read-only tools. Install the plugin and in a new conversation type `@Warren Buffett Brain` and ask for a source-linked GEICO analysis.
+
+**Availability warning:** OpenAI's current Help Center says creation of custom MCP connections is available on ChatGPT Business and Enterprise/Edu web, subject to admin/owner permissions and Enterprise/Edu RBAC. Some user accounts may not show this option; deploying the server does not unlock the ChatGPT feature for those accounts.
+
+**Security and cost:** This public MCP has read-only research tools, does not touch ValuEdge or any broker, and authenticates no visitors. Configure [Build watch paths](https://developers.cloudflare.com/workers/ci-cd/builds/build-watch-paths/) to include `mcp/*` and `knowledge/atlas.json` so irrelevant website/README commits do not trigger Worker rebuilds. Cloudflare Free has daily request and per-request CPU limits; monitor Workers analytics and consider rate limiting if traffic grows.
+
+## Troubleshooting
+
+- **Cannot find repository:** In the GitHub app permission page, select the repository for Cloudflare Workers and Pages; then refresh the Cloudflare import screen.
+- **No `wrangler.jsonc` found:** Root directory must be `mcp`.
+- **Worker name mismatch:** Name in Cloudflare and in `mcp/wrangler.jsonc` must be exactly `warren-buffett-brain-mcp`.
+- **Build fails resolving imports:** Confirm Cloudflare checked out the **whole repository**, including `knowledge/atlas.json`. Run the [MCP build validation workflow](../.github/workflows/mcp-validate-worker.yml) and inspect its logs.
+- **`/health` is 404:** Check the exact assigned `workers.dev` hostname and whether the deployment succeeded.
+- **Tools can be listed but not called:** Re-test via MCP Inspector. The transport must run statelessly so requests do not require a lost session.
+- **ChatGPT has no Add custom MCP server:** This is an account/workspace eligibility or permission question, not a Cloudflare deployment problem.
+
 ## Deploy on Cloudflare Workers
 
 The owner must use a Cloudflare account with permission to deploy Workers:
