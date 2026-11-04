@@ -71,6 +71,6 @@ class EditorialWebsiteTest(unittest.TestCase):
         atlas=json.loads((ROOT/"knowledge/atlas.json").read_text(encoding="utf-8"))
         self.assertEqual(len(atlas["entries"]),55)
         self.assertEqual(len(atlas["sources"]),60)
-        self.assertEqual((ROOT/"sitemap.xml").read_text(encoding="utf-8").count("<loc>"),10)
+        self.assertEqual((ROOT/"sitemap.xml").read_text(encoding="utf-8").count("<loc>"),13)
 
 if __name__=="__main__":unittest.main()
