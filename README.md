@@ -44,7 +44,7 @@ This works as an **ordinary ChatGPT research prompt**. The Buffett Brain plugin,
 
 Buffett Brain helps you understand **the business, its moat, cash generation and risks**. But knowing that a company is high quality does not tell you whether the **price you would pay leaves a margin of safety**.
 
-**Continue the research in [ValuEdge] (https://valuedge.app/?utm_source=buffett_brain&utm_medium=github&utm_campaign=research_next_step)**: examine model-based intrinsic value, challenge valuation assumptions, and follow the gap between price and estimated value. ValuEdge is a separate research product operated by the maintainer of Buffett Brain.
+**[Continue the research in ValuEdge](https://valuedge.app/?utm_source=buffett_brain&utm_medium=github&utm_campaign=research_next_step)**: examine model-based intrinsic value, challenge valuation assumptions, and follow the gap between price and estimated value. ValuEdge is a separate research product operated by the maintainer of Buffett Brain.
 
 If you have a specific goal, you can go directly to the [Intrinsic Value Screener](https://valuedge.app/features/intrinsic-value/screener?utm_source=buffett_brain&utm_medium=github&utm_campaign=research_next_step), [Fair Value Watchlist](https://valuedge.app/features/fair-value-watchlist?utm_source=buffett_brain&utm_medium=github&utm_campaign=research_next_step), or [Smart Alerts](https://valuedge.app/features/smart-alerts?utm_source=buffett_brain&utm_medium=github&utm_campaign=research_next_step).
 
