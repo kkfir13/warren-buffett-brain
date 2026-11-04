@@ -2,3 +2,10 @@ node_modules/
 .wrangler/
 .env
 .dev.vars
+.env.*
+!.env.example
+.dev.vars.*
+*.pem
+*.key
+*.p12
+*.pfx

@@ -42,4 +42,29 @@ const overview = await rpc(5, "tools/call", { name: "research_overview", argumen
 assert.equal(JSON.parse(overview.content[0].text).originalResearchNotes, 55);
 const disallowed = await fetch(base + "/mcp", { method: "POST", headers: { origin: "https://invalid.example", "content-type":"application/json" }, body: "{}" });
 assert.equal(disallowed.status, 403);
-console.log("PASS: Worker health, stateless initialize, tool discovery, GEICO search/fetch, research overview, origin check");
+
+const oversizedBody = JSON.stringify({
+  jsonrpc: "2.0", id: 6, method: "tools/call",
+  params: { name: "search", arguments: { query: "GEICO", padding: "x".repeat(40_000) } }
+});
+const oversized = await fetch(base + "/mcp", {
+  method: "POST",
+  headers: { "content-type": "application/json", "accept": "application/json, text/event-stream" },
+  body: new ReadableStream({
+    start(controller) {
+      controller.enqueue(new TextEncoder().encode(oversizedBody));
+      controller.close();
+    }
+  }),
+  duplex: "half",
+  signal: AbortSignal.timeout(20000)
+});
+assert.equal(oversized.status, 413, await oversized.text());
+const excessiveArgumentKeys = Object.fromEntries(
+  Array.from({ length: 90 }, (_, i) => ["extra_" + i, i])
+);
+const tooMany = await rpc(7, "tools/call", {
+  name: "search", arguments: { query: "GEICO", ...excessiveArgumentKeys }
+});
+assert.equal(tooMany.isError, true, "large argument objects must be rejected");
+console.log("PASS: Worker health, MCP tools, origin, chunked-body and input-element limits");

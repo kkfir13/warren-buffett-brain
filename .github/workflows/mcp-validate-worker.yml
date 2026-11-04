@@ -2,8 +2,25 @@ name: Validate Cloudflare Worker MCP before deployment
 on:
   workflow_dispatch:
   push:
+    branches: [main]
     paths:
       - 'mcp/worker.ts'
+      - 'mcp/package.json'
+      - 'mcp/wrangler.jsonc'
+      - 'mcp/evidence.mjs'
+      - 'mcp/evidence.test.mjs'
+      - 'knowledge/atlas.json'
+      - 'tests/mcp-worker-smoke.mjs'
+      - '.github/workflows/mcp-validate-worker.yml'
+  pull_request:
+    paths:
+      - 'mcp/worker.ts'
+      - 'mcp/package.json'
+      - 'mcp/wrangler.jsonc'
+      - 'mcp/evidence.mjs'
+      - 'mcp/evidence.test.mjs'
+      - 'knowledge/atlas.json'
+      - 'tests/mcp-worker-smoke.mjs'
       - '.github/workflows/mcp-validate-worker.yml'
 permissions:
   contents: read

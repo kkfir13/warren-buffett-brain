@@ -11,7 +11,7 @@
     "check": "node --check evidence.mjs"
   },
   "dependencies": {
-    "@modelcontextprotocol/sdk": "1.25.3",
+    "@modelcontextprotocol/sdk": "1.32.2",
     "zod": "4.1.13"
   },
   "devDependencies": {
