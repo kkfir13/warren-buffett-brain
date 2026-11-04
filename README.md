@@ -1,66 +1,70 @@
 # Warren Buffett Brain
 
-**Research a stock with Buffett-inspired discipline. Follow the actual Berkshire evidence.**
+**Research businesses with a Buffett-inspired framework. Check the evidence, question the moat, and separate a good company from a good price.**
 
-Warren Buffett Brain is an independent, open-source investment research library and AI skill. It helps you study historical Buffett decisions—and ask better questions about companies you research today.
+Warren Buffett Brain is a free, independent, open-source library of historical Berkshire Hathaway research and reusable instructions for AI assistants. It is **not** Warren Buffett's actual brain, an official Berkshire product, a live-stock-price feed, or an AI that knows what Buffett would buy today.
 
-[**Use Warren Buffett Brain in ChatGPT →**](CHATGPT.md) · [Download the Skills-only plugin](dist/warren-buffett-brain-chatgpt-plugin.zip) · [Download for eligible Personal Skills users](dist/warren-buffett-brain-personal-skill.zip) · [Explore the original case studies](https://kkfir13.github.io/warren-buffett-brain/cases/) · [Browse the source archive](https://kkfir13.github.io/warren-buffett-brain/) · [View the AI skill](skills/warren-buffett-brain/SKILL.md)
+**[Start with ChatGPT](CHATGPT.md)** · [Browse the research website](https://kkfir13.github.io/warren-buffett-brain/) · [Read the eight case studies](deep-dives/) · [Instructions for AI agents](AGENTS.md)
 
-> **ChatGPT availability:** The Buffett Brain plugin package exists, but it is **not publicly listed** in the ChatGPT Plugins Directory yet. You can try the research prompt below in ChatGPT now; that does not install the plugin or automatically load its bundled reference files. The installable skill will be available to other users only after directory approval and publication.
+## Try it in ChatGPT right now
 
-## No hosted backend — the research travels with the skill
-
-**No Supabase, no ValuEdge servers, no paid inference API, and no always-on backend are needed** for the Buffett Brain plugin. Its historical research notes and original case studies are packaged with the Skills-only ZIP. ChatGPT itself remains an online product; "offline" here means **no dedicated server for the plugin**, not that ChatGPT works without an internet connection.
-
-Advanced desktop MCP users can instead use the [local stdio MCP](local-mcp/README.md), which runs on their own device using Python and needs no hosting. A remote MCP is **not** included in the main ZIP.
-
-## Try it in ChatGPT right now — no installation
-
-Open [ChatGPT](https://chatgpt.com/) and paste this prompt, replacing the company or ticker:
+You can copy this prompt into [ChatGPT](https://chatgpt.com/) today. No Warren Buffett Brain installation or account is needed **to try the methodology**:
 
 ```text
-Research [COMPANY OR TICKER] using Warren Buffett-inspired value-investing principles. Explain how the business earns money, the evidence for or against a durable competitive moat, management's capital allocation, cash-flow quality, debt and the strongest bear case.
+Analyze [COMPANY / TICKER] using Buffett-inspired value-investing principles.
 
-Separate business quality from the price I'd pay. Use dated primary filings and cite your sources. If reliable current prices or valuation inputs are unavailable, say so instead of inventing numbers. Distinguish documented Buffett history from your own interpretation; don't pretend Buffett has endorsed the stock.
+Explain how the business earns money, the evidence for and against its moat, management's capital allocation, owner-like cash flow, debt and the strongest bear case. Separate the quality of the business from whether the current share price offers a margin of safety.
 
-Finish with the three most important facts I should verify next.
+Use dated primary filings and show your sources. Separate reported facts, your interpretation and assumptions. Do not invent quotes, prices or fair values, and do not pretend Buffett endorses this stock. Finish with the three most important things to investigate next.
 ```
 
-This works as an **ordinary ChatGPT research prompt**. The Buffett Brain plugin, when installed in a supported ChatGPT environment, adds a packaged collection of independently written historical evidence notes and case studies.
+**Important:** this is a normal ChatGPT prompt, **not** an installed skill. Pasting it does not load this repository's historical notes. Ask your assistant to read the linked research files only if it actually has access to the repository or you provide the files.
 
-## What can you ask?
+## Choose how to use the project
 
-| Your question | What the research should examine |
-| --- | --- |
-| **Why did Buffett invest in GEICO?** | His early investigation, GEICO's crisis, management and underwriting risks |
-| **What did See's Candies teach Buffett?** | Economic goodwill, pricing power and incremental capital requirements |
-| **Analyze Microsoft like a business owner.** | Moat evidence, returns on capital, cash flows, debt, valuation assumptions and risks |
-| **Where did Buffett get it wrong?** | Dexter Shoe, General Re and the economic cost of issuing Berkshire stock |
-| **Is this stock a good business at a good price?** | A business-quality checklist *separately* from dated valuation evidence |
+| What you want | Available now? | Start here |
+| --- | --- | --- |
+| Ask ChatGPT to analyze a company using the framework | **Yes** — ordinary prompt, no installation | [Copy the prompt](CHATGPT.md#1-try-the-method-in-chatgpt-now) |
+| Browse Buffett/Berkshire historical evidence and original case studies | **Yes** — public repository and website | [Research index](knowledge/atlas.json) · [Case studies](deep-dives/) |
+| Have an AI agent use **this repository's actual files** | **Yes**, if that agent can read these files | [AI agent guide](AGENTS.md) |
+| Import the historical research as a ChatGPT Personal Skill | **Eligible accounts/workspaces only** | [Import instructions](CHATGPT.md#2-import-the-research-skill-if-your-account-supports-it) |
+| Connect a local MCP server from a desktop client | **Yes**, with Python and a compatible stdio MCP client | [Local MCP setup](local-mcp/README.md) |
+| Install Warren Buffett Brain directly from the public ChatGPT Plugins Directory | **Not yet** — the plugin is not publicly listed | [Availability explained](CHATGPT.md#3-public-plugin-availability) |
 
-[Explore eight full investment case studies](https://kkfir13.github.io/warren-buffett-brain/cases/) · [Read the source-linked evidence index](knowledge/atlas.json)
+The prebuilt [Skills-only plugin ZIP](dist/warren-buffett-brain-chatgpt-plugin.zip) is a *package for plugin distribution*, not a one-click public ChatGPT installation. The separate [Personal Skill ZIP](dist/warren-buffett-brain-personal-skill.zip) is for users whose ChatGPT workspace supports skill uploads. They are **different archive formats**; neither includes a hosted MCP connection.
 
-## A great business is not always a great price
+## What's in the research library?
 
-Buffett Brain helps you understand **the business, its moat, cash generation and risks**. But knowing that a company is high quality does not tell you whether the **price you would pay leaves a margin of safety**.
+- **55** independently written notes about documented investing principles, Berkshire decisions, mistakes and historical context.
+- **60** external source links, including the Berkshire shareholder-letter index. A link **does not** mean a whole letter, meeting recording or book was copied or reviewed.
+- **Eight** original long-form case studies, including GEICO, See's Candies, Coca-Cola, Goldman Sachs, BNSF and Berkshire's mistakes.
+- Source-linked research records with **evidence**, **interpretation**, **limitations** and a trail back to original publishers.
+- An offline Python search script and optional local MCP tools: `search`, `fetch`, and `research_overview`.
 
-**[Continue the research in ValuEdge](https://valuedge.app/?utm_source=buffett_brain&utm_medium=github&utm_campaign=research_next_step)**: examine model-based intrinsic value, challenge valuation assumptions, and follow the gap between price and estimated value. ValuEdge is a separate research product operated by the maintainer of Buffett Brain.
+Try questions like: **What did See's Candies reveal about pricing power?** / **What went wrong with Dexter Shoe?** / **Does GOOGL generate enough cash to justify the price I would pay?**
 
-If you have a specific goal, you can go directly to the [Intrinsic Value Screener](https://valuedge.app/features/intrinsic-value/screener?utm_source=buffett_brain&utm_medium=github&utm_campaign=research_next_step), [Fair Value Watchlist](https://valuedge.app/features/fair-value-watchlist?utm_source=buffett_brain&utm_medium=github&utm_campaign=research_next_step), or [Smart Alerts](https://valuedge.app/features/smart-alerts?utm_source=buffett_brain&utm_medium=github&utm_campaign=research_next_step).
+For the current stock's filings, quotes or valuation, the assistant needs **separate up-to-date sources**. This repository does not supply live prices, a proprietary Buffett valuation score, trading functionality or brokerage access.
 
-**Optional, not a dependency:** Buffett Brain's original research stays free and useful without ValuEdge. Valuation models have limitations; never treat an estimated fair value as Buffett's personal view or as a trading instruction.
+## For AI assistants and developers
 
-## What is included in the open-source project?
+Read [AGENTS.md](AGENTS.md) for the correct order of research, what files are available, how to cite original sources, and how to report missing evidence. The packaged skill instructions are in [skills/warren-buffett-brain/SKILL.md](skills/warren-buffett-brain/SKILL.md).
 
-- **55** original historical research notes across Berkshire decisions, investing principles, mistakes, books and brief attributed statements.
-- **60** external source links, including the official Berkshire shareholder-letter archive covering 1977–2024. *Links are not complete copies of the letters or evidence that every letter has been fully reviewed.*
-- **Eight** original source-linked investment case studies, from GEICO and See's Candies to Goldman Sachs, BNSF and admitted errors.
-- A zero-hosting [local MCP desktop adapter](local-mcp/README.md), plus a self-hostable [research website](https://kkfir13.github.io/warren-buffett-brain/), [ChatGPT-ready skill](skills/warren-buffett-brain/SKILL.md), offline search tool, documented methodology and unit tests.
+You can search the historical index locally, without running an LLM or connecting to a service:
 
-**Independent project:** not affiliated with, endorsed by or operated by Warren Buffett or Berkshire Hathaway. Benjamin Graham wrote *The Intelligent Investor*; Charlie Munger and Alice Schroeder have distinct works and views. Original content and code are MIT-licensed; books, letters, transcripts and other third-party materials retain their rights. Educational research only, not investment advice.
+```bash
+python3 scripts/search_knowledge.py "GEICO competitive advantage" --json
+```
 
-## Open source means you can inspect and improve it
+Python is for local scripts and the optional desktop MCP, **not** a requirement for reading the website or pasting the ChatGPT prompt.
 
-Browse [the original evidence](knowledge/atlas.json), [case studies](deep-dives/), [research methodology](references/methodology.md) or [contribute a documented correction](CONTRIBUTING.md).
+## From business quality to valuation (optional)
 
-For maintainers, publication steps, plugin packaging, GitHub Pages and Search Console live in [MAINTAINER.md](docs/MAINTAINER.md)—not in the end-user getting-started guide.
+Understanding a company's moat does not establish that the stock is cheap. **[Continue the research in ValuEdge](https://valuedge.app/?utm_source=buffett_brain&utm_medium=github&utm_campaign=research_next_step)** if you want to examine separate model-based valuations and assumptions. ValuEdge is a **separate commercial research product operated by this project's maintainer**; it is not needed to use Buffett Brain and its estimates are not Buffett's views.
+
+## Trust, rights, and contributions
+
+This project is not affiliated with, endorsed by or operated by Warren Buffett or Berkshire Hathaway. Its original code and research summaries are MIT-licensed. Third-party books, shareholder letters, recordings, photographs, brands and other materials remain with their rights holders; this project links to them instead of redistributing full texts.
+
+For source standards and corrections, see [research and rights](knowledge/README.md), [contributing](CONTRIBUTING.md), [privacy](PRIVACY.md) and [terms](TERMS.md). Report missing or misattributed evidence through [GitHub Issues](https://github.com/kkfir13/warren-buffett-brain/issues).
+
+Maintainer-only deployment and submission details are in [docs/MAINTAINER.md](docs/MAINTAINER.md), not required for ordinary use.
