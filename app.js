@@ -30,8 +30,8 @@ function card(e){
  expanded.append(list);
  if(e.deepDivePath && /^deep-dives\/[a-z0-9-]+\.md$/.test(e.deepDivePath)){
    const deep=mk('a','longform','Read the complete source-linked case study ↗');
-   deep.href='https://github.com/kkfir13/warren-buffett-brain/blob/main/'+e.deepDivePath;
-   deep.target='_blank';deep.rel='noopener noreferrer';expanded.append(deep);
+   deep.href='./cases/'+e.deepDivePath.slice('deep-dives/'.length).replace(/\.md$/,'')+'/';
+   expanded.append(deep);
  }
  root.append(expanded);return root;
 }

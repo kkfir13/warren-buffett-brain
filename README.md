@@ -5,6 +5,12 @@
 
 **Verified baseline:** 60 linked sources, 55 original evidence notes, 8 long-form transaction case studies, and four brief attributed quotations. The primary-source index covers links to official Berkshire shareholder letters for 1977–2024 plus SEC filings, CNBC's licensed meetings archive, and relevant book catalogs. **A linked letter is not a claim its entire contents have been reviewed.** All research can be used without a ValuEdge subscription.
 
+## Live website and search indexing
+
+The project also has a static website on GitHub Pages: [Warren Buffett Brain](https://kkfir13.github.io/warren-buffett-brain/). It contains a full-text local evidence explorer and **eight separate HTML research case studies**, with unique page titles, original references, canonical URLs, structured Article data and a [10-URL sitemap](https://kkfir13.github.io/warren-buffett-brain/sitemap.xml). All articles are independently written and linked to primary sources; no copyrighted source texts are mirrored.
+
+After GitHub Pages publishes a commit, use [Google Search Console](https://search.google.com/search-console) to verify the URL-prefix property `https://kkfir13.github.io/warren-buffett-brain/`, submit the `sitemap.xml` URL and inspect/request indexing for the homepage. Google decides whether to crawl and index the site; publishing or submitting does not guarantee rankings.
+
 ## Run the research website
 
 Requires Python 3 and a browser; no cloud AI, credentials, npm install, paid API or account.

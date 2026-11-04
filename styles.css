@@ -2,3 +2,6 @@
 .card .longform{display:inline-flex;margin:12px 0 0;font-size:12px;font-weight:750;color:#b6fbc1;text-decoration:underline;text-underline-offset:3px}
 
 .card .quote{margin:12px 0 16px;border-left:2px solid #a6f4b6;padding-left:16px;color:#e1f8e4;font-size:16px;line-height:1.6;font-style:italic}.card .quote cite{display:block;font-size:11px;color:#9eb6a5;font-style:normal;margin-top:10px}
+
+/* Independently crawlable, source-linked case studies: plain HTML anchors. */
+.featured-studies{padding:64px 0 82px;border-top:1px solid #ffffff22}.featured-studies h2{font-size:clamp(29px,4vw,46px)}.featured-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;list-style:none;margin:27px 0 33px;padding:0}.featured-links a{display:block;height:100%;padding:18px 20px;border:1px solid #ffffff25;border-radius:12px;background:#142319;font-size:14px;line-height:1.5;color:#cef5d1}.featured-links a:hover{border-color:#a9eeb1;color:white}@media(max-width:760px){.featured-links{grid-template-columns:1fr}.header nav a:nth-child(3){display:none}}
