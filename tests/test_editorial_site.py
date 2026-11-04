@@ -39,6 +39,7 @@ class EditorialWebsiteTest(unittest.TestCase):
             self.assertIn(ident,html.ids)
         for slug in SLUGS:
             self.assertIn("./cases/"+slug+"/",html.links)
+        self.assertIn("https://github.com/kkfir13/warren-buffett-brain/blob/main/CHATGPT.md",html.links)
         self.assertTrue(any(m.get("rel")=="canonical" and m.get("href")==SITE for m in html.meta))
     def test_case_study_toc_sources_and_canonicals(self):
         for slug in SLUGS:
