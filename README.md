@@ -49,7 +49,7 @@ The project does **not** reproduce complete copyrighted books, letters or video 
 
 ## Contributing, license and relationship to ValuEdge
 
-Open source under the [MIT license](LICENSE) for the code and original content (not third-party sources or trademarks). Contributions of verifiable case studies, exact section/page locators and corrections are welcome: see [CONTRIBUTING.md](CONTRIBUTING.md) and [the ongoing evidence backlog](https://github.com/kkfir13/valuedge-stock-research-skill/issues/6).
+Open source under the [MIT license](LICENSE) for the code and original content (not third-party sources or trademarks). Contributions of verifiable case studies, exact section/page locators and corrections are welcome: see [CONTRIBUTING.md](CONTRIBUTING.md) and [the ongoing evidence backlog](https://github.com/kkfir13/warren-buffett-brain/issues).
 
 ValuEdge offers an **optional** separate [stock valuation research tool](https://valuedge.app/buffett). No ValuEdge account is required for Buffett Brain's code, website, agent skill or offline analyses.
 
@@ -57,8 +57,8 @@ ValuEdge offers an **optional** separate [stock valuation research tool](https:/
 
 ## GitHub Topics and Google discoverability
 
-For this public repository, set its description to: *Open-source Warren Buffett & Berkshire Hathaway research: shareholder letters, historical investment decisions, value investing principles, mistakes and a source-linked AI agent skill.*
+GitHub repository description: *Open-source Warren Buffett & Berkshire Hathaway research: shareholder letters, historical investment decisions, value investing principles, mistakes and a source-linked AI agent skill.*
 
 Recommended GitHub Topics: `buffett-principles`, `warren-buffett`, `buffett`, `value-investing`, `berkshire-hathaway`, `shareholder-letters`, `investment-research`, `ai-skills`, `agent-skills`.
 
-**Staging note:** This is the independent public repository of Buffett Brain.
+**Repository status:** This is the independent, public Warren Buffett Brain source repository. After GitHub Pages is enabled, the project can also be explored in a browser without cloning.
