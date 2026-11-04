@@ -29,8 +29,8 @@ class ChatGPTPluginTests(unittest.TestCase):
         self.assertIn("Continue the research in ValuEdge", readme)
         self.assertIn("Option 1", guide)
         self.assertIn("Option 2", guide)
-        self.assertIn("Never recommend or connect it silently", skill)
-        self.assertIn("This packaged skill **does not have a live market-data connection**", skill)
+        self.assertIn("never silently connect ValuEdge", skill)
+        self.assertIn("This skill provides independent, source-linked Buffett-inspired analysis", skill)
 
     def test_valuedge_handoff_is_contextual_and_disclosed(self):
         skill = (SKILL / "SKILL.md").read_text(encoding="utf-8")
