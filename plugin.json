@@ -1,8 +1,8 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "warren-buffett-brain",
-  "version": "1.0.0",
-  "description": "Independent, source-linked Warren Buffett and Berkshire Hathaway investment research: historic decisions, shareholder letters, mistakes, and value-investing analysis.",
+  "version": "1.1.0",
+  "description": "Open-source, source-linked Warren Buffett and Berkshire Hathaway investment research for ChatGPT: real decisions, investing principles, historical mistakes and Buffett-inspired stock analysis.",
   "author": {
     "name": "Kfir Aharon",
     "url": "https://github.com/kkfir13"
@@ -13,30 +13,36 @@
   "keywords": [
     "warren-buffett",
     "berkshire-hathaway",
+    "buffett-brain",
     "value-investing",
-    "shareholder-letters",
-    "investment-research"
+    "investing-research",
+    "stock-analysis",
+    "shareholder-letters"
   ],
   "extensions": {
     "com.openai": {
       "interface": {
         "displayName": "Warren Buffett Brain",
-        "shortDescription": "Source-backed Buffett research",
-        "longDescription": "Research Warren Buffett, Berkshire Hathaway, historic investments, shareholder letters and acknowledged mistakes using independently written, source-linked evidence notes and original case studies. Apply a Buffett-inspired checklist to public companies without attributing an opinion or valuation to Buffett. No account, broker connection, or paid API is needed. The research is independent and not affiliated with Buffett or Berkshire Hathaway; it does not provide live market data or investment recommendations.",
+        "shortDescription": "Buffett-style stock research",
+        "longDescription": "Research Warren Buffett's and Berkshire Hathaway's documented deals, shareholder letters, mistakes and investment principles using original, source-linked case studies. Apply an evidence-led Buffett-inspired checklist to public stocks. The skill is free, independent and not affiliated with Buffett. It does not include live prices or personal portfolio access; a separate data connection is optional.",
         "developerName": "Kfir Aharon",
         "category": "Finance",
         "capabilities": [
-          "Source-linked historical investment research",
-          "Study Berkshire Hathaway investment decisions",
-          "Analyze competitive moats and capital allocation"
+          "Explain historic Berkshire decisions and mistakes with source links",
+          "Analyze businesses with a Buffett-inspired value-investing checklist",
+          "Challenge moat, cash-flow, valuation assumptions and downside cases"
         ],
-        "websiteURL": "https://github.com/kkfir13/warren-buffett-brain",
+        "websiteURL": "https://kkfir13.github.io/warren-buffett-brain/",
         "supportURL": "https://github.com/kkfir13/warren-buffett-brain/issues",
         "defaultPrompt": [
-          "What did Buffett learn from buying See's Candies? Cite the historical evidence.",
-          "Explain Berkshire's GEICO history and the risks in that investment.",
-          "Assess a company's moat and capital allocation using Buffett-inspired principles."
-        ]
+          "Why did Buffett buy GEICO? Explain his research, the risks and primary sources.",
+          "Research MSFT's moat and cash flows using Buffett-inspired principles.",
+          "Challenge my thesis for GOOGL: business quality versus a sensible price."
+        ],
+        "logo": "./assets/wbb-icon.svg",
+        "composerIcon": "./assets/wbb-icon.svg",
+        "brandColor": "#315941",
+        "brandColorDark": "#A8CFB6"
       }
     }
   }
