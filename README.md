@@ -24,12 +24,12 @@ Use dated primary filings and show your sources. Separate reported facts, your i
 
 | What you want | Available now? | Start here |
 | --- | --- | --- |
-| Ask ChatGPT to analyze a company using the framework | **Yes** — ordinary prompt, no installation | [Copy the prompt](CHATGPT.md#1-try-the-method-in-chatgpt-now) |
+| Ask ChatGPT to analyze a company using the framework | **Yes** — ordinary prompt, no installation | [Copy the prompt](CHATGPT.md#option-1-try-the-method-in-chatgpt-now) |
 | Browse Buffett/Berkshire historical evidence and original case studies | **Yes** — public repository and website | [Research index](knowledge/atlas.json) · [Case studies](deep-dives/) |
 | Have an AI agent use **this repository's actual files** | **Yes**, if that agent can read these files | [AI agent guide](AGENTS.md) |
-| Import the historical research as a ChatGPT Personal Skill | **Eligible accounts/workspaces only** | [Import instructions](CHATGPT.md#2-import-the-research-skill-if-your-account-supports-it) |
+| Import the historical research as a ChatGPT Personal Skill | **Eligible accounts/workspaces only** | [Import instructions](CHATGPT.md#option-2-import-the-research-skill-if-your-account-supports-it) |
 | Connect a local MCP server from a desktop client | **Yes**, with Python and a compatible stdio MCP client | [Local MCP setup](local-mcp/README.md) |
-| Install Warren Buffett Brain directly from the public ChatGPT Plugins Directory | **Not yet** — the plugin is not publicly listed | [Availability explained](CHATGPT.md#3-public-plugin-availability) |
+| Install Warren Buffett Brain directly from the public ChatGPT Plugins Directory | **Not yet** — the plugin is not publicly listed | [Availability explained](CHATGPT.md#option-3-public-plugin-availability) |
 
 The prebuilt [Skills-only plugin ZIP](dist/warren-buffett-brain-chatgpt-plugin.zip) is a *package for plugin distribution*, not a one-click public ChatGPT installation. The separate [Personal Skill ZIP](dist/warren-buffett-brain-personal-skill.zip) is for users whose ChatGPT workspace supports skill uploads. They are **different archive formats**; neither includes a hosted MCP connection.
 
