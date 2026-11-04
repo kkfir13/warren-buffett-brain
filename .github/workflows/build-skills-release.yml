@@ -1,5 +1,10 @@
 name: Build versioned standalone Buffett Brain skill ZIP
 on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/build-skills-release.yml'
+      - 'scripts/build_personal_skill.py'
   workflow_dispatch:
 permissions:
   contents: write
@@ -20,6 +25,7 @@ jobs:
       - name: Build independent Skills-only ZIP
         run: |
           python3 scripts/build_chatgpt_plugin.py
+          python3 scripts/build_personal_skill.py
           python3 - <<'PY'
           import zipfile,json
           path='dist/warren-buffett-brain-chatgpt-plugin.zip'
@@ -36,7 +42,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add dist/warren-buffett-brain-chatgpt-plugin.zip
+          git add dist/warren-buffett-brain-chatgpt-plugin.zip dist/warren-buffett-brain-personal-skill.zip
           if ! git diff --cached --quiet; then
             git commit -m "Publish standalone Buffett Brain skills-only 1.2.0 ZIP"
             git push origin HEAD:main

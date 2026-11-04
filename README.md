@@ -4,7 +4,7 @@
 
 Warren Buffett Brain is an independent, open-source investment research library and AI skill. It helps you study historical Buffett decisions—and ask better questions about companies you research today.
 
-[**Use Warren Buffett Brain in ChatGPT →**](CHATGPT.md) · [Download the Skills-only plugin](dist/warren-buffett-brain-chatgpt-plugin.zip) · [Explore the original case studies](https://kkfir13.github.io/warren-buffett-brain/cases/) · [Browse the source archive](https://kkfir13.github.io/warren-buffett-brain/) · [View the AI skill](skills/warren-buffett-brain/SKILL.md)
+[**Use Warren Buffett Brain in ChatGPT →**](CHATGPT.md) · [Download the Skills-only plugin](dist/warren-buffett-brain-chatgpt-plugin.zip) · [Download for eligible Personal Skills users](dist/warren-buffett-brain-personal-skill.zip) · [Explore the original case studies](https://kkfir13.github.io/warren-buffett-brain/cases/) · [Browse the source archive](https://kkfir13.github.io/warren-buffett-brain/) · [View the AI skill](skills/warren-buffett-brain/SKILL.md)
 
 > **ChatGPT availability:** The Buffett Brain plugin package exists, but it is **not publicly listed** in the ChatGPT Plugins Directory yet. You can try the research prompt below in ChatGPT now; that does not install the plugin or automatically load its bundled reference files. The installable skill will be available to other users only after directory approval and publication.
 

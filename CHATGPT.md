@@ -30,6 +30,19 @@ The [Buffett Brain plugin package](dist/warren-buffett-brain-chatgpt-plugin.zip)
 
 The skill adds a disciplined framework and bundled historical notes. It does **not** provide live securities prices, trade execution or access to personal accounts.
 
+## Option 2b — Import as a Personal Skill on eligible ChatGPT accounts
+
+Eligible ChatGPT Business, Enterprise, Healthcare and Edu accounts with Personal Skills enabled can use the research bundle **without waiting for universal Plugins Directory publication**. This is a manual import per person or workspace, not a one-click public plugin installation.
+
+1. Download the [Warren Buffett Brain Personal Skill ZIP](dist/warren-buffett-brain-personal-skill.zip).
+2. Open ChatGPT → **Plugins** → **Skills** → **Create** → **Upload from your computer**.
+3. Select that ZIP and follow the safety review/installation prompts. If your account does not show Skills or Upload, this route is not available to your account.
+4. In ChatGPT, ask: **"Use Warren Buffett Brain to explain Berkshire's GEICO investment and cite the historical evidence."**
+
+**Do not upload the plugin ZIP in this Skills uploader**; it is a separate format with `plugin.json`. The Personal Skill ZIP contains one `warren-buffett-brain/` folder with `SKILL.md` and its bundled `references/`. Neither path connects to ValuEdge, Supabase or a remote MCP server.
+
+See the [OpenAI Help Center — Skills in ChatGPT](https://help.openai.com/en/articles/20001066-skills-in-chatgpt/) for plan/role requirements.
+
 ## Option 3 — Use offline MCP on a compatible desktop client
 
 Users who want an MCP server rather than the ChatGPT plugin can use the [local no-hosting MCP adapter](local-mcp/README.md). This is an **advanced desktop setup**, not an automatically available ChatGPT web connection. It runs from the open-source repository with Python and the user's own machine, at no ongoing hosting cost.
