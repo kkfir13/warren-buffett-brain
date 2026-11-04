@@ -2,9 +2,9 @@ name: Buffett Brain — integrity and research tests
 on:
   push:
     branches: [main]
-    paths: ['knowledge/**', 'deep-dives/**', 'skills/**', 'scripts/**', 'tests/**', 'plugin.json', 'CHATGPT.md', 'index.html', 'app.js', 'styles.css', '.github/workflows/research-tests.yml']
+    paths: ['cases/**', 'knowledge/**', 'deep-dives/**', 'skills/**', 'scripts/**', 'tests/**', 'plugin.json', 'CHATGPT.md', 'index.html', 'app.js', 'styles.css', '.github/workflows/research-tests.yml']
   pull_request:
-    paths: ['knowledge/**', 'deep-dives/**', 'skills/**', 'scripts/**', 'tests/**', 'plugin.json', 'CHATGPT.md', 'index.html', 'app.js', 'styles.css', '.github/workflows/research-tests.yml']
+    paths: ['cases/**', 'knowledge/**', 'deep-dives/**', 'skills/**', 'scripts/**', 'tests/**', 'plugin.json', 'CHATGPT.md', 'index.html', 'app.js', 'styles.css', '.github/workflows/research-tests.yml']
 permissions:
   contents: read
 jobs:
