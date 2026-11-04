@@ -29,7 +29,7 @@ Cloudflare Workers Builds can deploy this **subdirectory of the existing monorep
 
 **Availability warning:** OpenAI's current Help Center says creation of custom MCP connections is available on ChatGPT Business and Enterprise/Edu web, subject to admin/owner permissions and Enterprise/Edu RBAC. Some user accounts may not show this option; deploying the server does not unlock the ChatGPT feature for those accounts.
 
-**Security and cost:** This public MCP has read-only research tools, does not touch ValuEdge or any broker, and authenticates no visitors. Configure [Build watch paths](https://developers.cloudflare.com/workers/ci-cd/builds/build-watch-paths/) to include `mcp/*` and `knowledge/atlas.json` so irrelevant website/README commits do not trigger Worker rebuilds. Cloudflare Free has daily request and per-request CPU limits; monitor Workers analytics and consider rate limiting if traffic grows.
+**Security and cost:** This public MCP has read-only research tools, does not touch ValuEdge or any broker, and authenticates no visitors. It uses a patched MCP SDK, a 32 KiB HTTP request-body limit (including chunked requests), and a 64-element tool-input complexity limit. Do not put private APIs, user credentials, service-role keys, or sensitive research prompts in a public deployment. Configure [Build watch paths](https://developers.cloudflare.com/workers/ci-cd/builds/build-watch-paths/) to include `mcp/*` and `knowledge/atlas.json` so irrelevant website/README commits do not trigger Worker rebuilds. Cloudflare Free has daily request and per-request CPU limits; monitor Workers analytics and consider rate limiting if traffic grows.
 
 ## Troubleshooting
 
