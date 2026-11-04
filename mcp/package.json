@@ -1,0 +1,21 @@
+{
+  "name": "warren-buffett-brain-mcp",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Public read-only Warren Buffett Brain MCP Worker",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "test": "node --test evidence.test.mjs",
+    "check": "node --check evidence.mjs"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.25.3",
+    "zod": "4.1.13"
+  },
+  "devDependencies": {
+    "wrangler": "4.47.0",
+    "typescript": "5.9.3"
+  }
+}

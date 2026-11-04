@@ -11,6 +11,10 @@ The project also has a static website on GitHub Pages: [Warren Buffett Brain](ht
 
 After GitHub Pages publishes a commit, use [Google Search Console](https://search.google.com/search-console) to verify the URL-prefix property `https://kkfir13.github.io/warren-buffett-brain/`, submit the `sitemap.xml` URL and inspect/request indexing for the homepage. Google decides whether to crawl and index the site; publishing or submitting does not guarantee rankings.
 
+## Remote MCP server (public endpoint requires deployment)
+
+The source for a public, read-only **MCP Streamable HTTP server** is now in [mcp/](mcp/). It exposes evidence search, record fetch and research coverage without private accounts, live stock data or paid AI inference. **It has not yet been deployed to a public HTTPS host**, so there is currently no working URL to give other users. See the [deployment and testing guide](mcp/README.md). GitHub Pages hosts the separate static research website, not MCP requests.
+
 ## Use Warren Buffett Brain with ChatGPT
 
 **No localhost setup is required for end users.** This repository now includes a packaged, self-contained **skills-only ChatGPT Plugin** with source-linked research and a repeatable analysis workflow. See the [ChatGPT integration and publication guide](CHATGPT.md).

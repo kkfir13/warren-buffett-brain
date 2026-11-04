@@ -1,5 +1,13 @@
 # Use Warren Buffett Brain with ChatGPT
 
+## Two distinct distribution paths
+
+**Public MCP:** Host and verify the independent read-only MCP server described in [mcp/README.md](mcp/README.md). Once the HTTPS endpoint is live and its tools have passed real connection tests, a supported ChatGPT client can add it as a **custom MCP server**, and the OpenAI submission portal can review it via **With MCP**. Do not publish an imaginary MCP URL.
+
+**Plugins Directory:** The current `skills-only` release is **private** in ChatGPT and does not automatically appear as a public Platform listing. For a public plugin that includes remote MCP plus this skill, initiate a new **With MCP** submission, include the real deployed endpoint and provide the skill bundle; OpenAI review and publication are separate steps.
+
+
+
 This public repository contains a **skills-only ChatGPT Plugin package**. The plugin bundles original research notes and case studies. It does **not** need a localhost server, Python, an MCP server, a ValuEdge account or an OpenAI API key for the end user.
 
 ## For ChatGPT users
