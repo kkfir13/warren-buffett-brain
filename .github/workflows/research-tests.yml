@@ -1,0 +1,21 @@
+name: Buffett Brain — integrity and research tests
+on:
+  push:
+    branches: [main]
+    paths: ['knowledge/**', 'scripts/**', 'tests/**', 'index.html', 'app.js', 'styles.css', '.github/workflows/research-tests.yml']
+  pull_request:
+    paths: ['knowledge/**', 'scripts/**', 'tests/**', 'index.html', 'app.js', 'styles.css', '.github/workflows/research-tests.yml']
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python3 scripts/validate_knowledge.py
+      - run: python3 -m unittest discover -s tests -v
+      - run: node --check app.js

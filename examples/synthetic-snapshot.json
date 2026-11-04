@@ -1,0 +1,20 @@
+{
+  "synthetic": true,
+  "symbol": "DEMO",
+  "companyName": "Fictional Example Co.",
+  "sector": "Technology",
+  "currency": "USD",
+  "price": 100,
+  "fairValue": 150,
+  "hasValidFairValue": true,
+  "priceAsOf": "2026-11-03T00:00:00Z",
+  "fairValueAsOf": "2026-11-03T00:00:00Z",
+  "fundamentalsAsOf": "2026-10-30T00:00:00Z",
+  "metrics": {
+    "roicPct": 20,
+    "operatingMarginPct": 25,
+    "fcfYieldPct": 3,
+    "revenueCagr3yPct": 6,
+    "netDebtToEbitda": 1
+  }
+}
