@@ -33,6 +33,9 @@ def validate():
     assert (REFERENCES / "methodology.md").read_bytes() == (ROOT / "references" / "methodology.md").read_bytes()
     assert (SKILL / "SKILL.md").is_file()
     assert (REFERENCES / "RIGHTS.md").is_file()
+    interface = manifest["extensions"]["com.openai"]["interface"]
+    for name in ("logo", "composerIcon"):
+        assert (ROOT / interface[name].removeprefix("./")).is_file(), f"Missing plugin artwork: {name}"
 
 def validate_mcp_url(value: str) -> str:
     """Accept only a real-looking HTTPS MCP endpoint, not a local or placeholder URL."""
@@ -52,7 +55,7 @@ def validate_mcp_url(value: str) -> str:
 def build(output: Path, mcp_url: str | None = None):
     validate()
     output.parent.mkdir(parents=True, exist_ok=True)
-    paths = [ROOT / "plugin.json", ROOT / "LICENSE"] + sorted(p for p in SKILL.rglob("*") if p.is_file())
+    paths = [ROOT / "plugin.json", ROOT / "LICENSE"] + sorted(p for p in (ROOT / "assets").rglob("*") if p.is_file()) + sorted(p for p in SKILL.rglob("*") if p.is_file())
     with ZipFile(output, "w", compression=ZIP_DEFLATED, compresslevel=9) as z:
         for f in paths:
             z.write(f, f.relative_to(ROOT).as_posix())

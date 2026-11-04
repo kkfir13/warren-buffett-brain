@@ -19,6 +19,29 @@ class ChatGPTPluginTests(unittest.TestCase):
         self.assertLessEqual(len(p["extensions"]["com.openai"]["interface"]["shortDescription"]), 30)
         self.assertTrue((SKILL / "SKILL.md").read_text().startswith("---\n"))
 
+    def test_user_first_docs_and_optional_data_connection(self):
+        readme = (ROOT / "README.md").read_text(encoding="utf-8")
+        guide = (ROOT / "CHATGPT.md").read_text(encoding="utf-8")
+        skill = (SKILL / "SKILL.md").read_text(encoding="utf-8")
+        self.assertIn("Try it in ChatGPT right now", readme)
+        self.assertIn("not publicly listed", readme.lower())
+        self.assertNotIn("submit the `sitemap.xml`", readme.lower())
+        self.assertIn("ValuEdge is an optional, separate research tool", readme)
+        self.assertIn("Option 1", guide)
+        self.assertIn("Option 2", guide)
+        self.assertIn("Never recommend or connect it silently", skill)
+        self.assertIn("This packaged skill **does not have a live market-data connection**", skill)
+
+    def test_manifest_icon_and_starter_prompts(self):
+        p = json.loads((ROOT / "plugin.json").read_text(encoding="utf-8"))
+        interface = p["extensions"]["com.openai"]["interface"]
+        self.assertEqual(p["version"], "1.1.0")
+        self.assertLessEqual(len(interface["shortDescription"]), 30)
+        self.assertEqual(len(interface["defaultPrompt"]), 3)
+        self.assertTrue(all(len(prompt) <= 128 for prompt in interface["defaultPrompt"]))
+        self.assertTrue((ROOT / interface["logo"].lstrip("./")).is_file())
+        self.assertEqual(interface["logo"], interface["composerIcon"])
+
     def test_packaged_corpus_matches_canonical(self):
         bundled = SKILL / "references"
         self.assertEqual((ROOT / "knowledge/atlas.json").read_bytes(), (bundled / "atlas.json").read_bytes())
