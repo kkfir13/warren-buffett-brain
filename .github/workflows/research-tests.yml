@@ -19,3 +19,12 @@ jobs:
       - run: python3 scripts/validate_knowledge.py
       - run: python3 -m unittest discover -s tests -v
       - run: node --check app.js
+      # Upload one release candidate only when deliberately requested.
+      - name: Export plugin candidate
+        if: github.event_name == 'push' && contains(github.event.head_commit.message, '[plugin-release]')
+        uses: actions/upload-artifact@v4
+        with:
+          name: warren-buffett-brain-chatgpt-plugin
+          path: dist/warren-buffett-brain-chatgpt-plugin.zip
+          if-no-files-found: error
+          retention-days: 1
