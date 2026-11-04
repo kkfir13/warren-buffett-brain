@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 const endpoint = "https://axmttnzfvzsfhcruhmce.supabase.co/functions/v1/buffett-brain-mcp/mcp";
 const wait = (ms) => AbortSignal.timeout(ms);
-const health = await fetch(endpoint.slice(0,-4)+"health",{signal:wait(20000)});
+const health = await fetch(endpoint.replace(/\/mcp$/, "/health"),{signal:wait(20000)});
 assert.equal(health.status,200,"Health HTTP status "+health.status);
 const json = await health.json();
 assert.equal(json.status,"ok");
