@@ -1,0 +1,45 @@
+name: Build versioned standalone Buffett Brain skill ZIP
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/build-skills-release.yml']
+permissions:
+  contents: write
+jobs:
+  package:
+    if: github.repository == 'kkfir13/warren-buffett-brain'
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate source material and offline MCP
+        run: python3 -m unittest discover -s tests -q
+      - name: Build independent Skills-only ZIP
+        run: |
+          python3 scripts/build_chatgpt_plugin.py
+          python3 - <<'PY'
+          import zipfile,json
+          path='dist/warren-buffett-brain-chatgpt-plugin.zip'
+          with zipfile.ZipFile(path) as z:
+              assert z.testzip() is None
+              assert 'mcp.json' not in z.namelist()
+              assert '.mcp.json' not in z.namelist()
+              assert json.loads(z.read('plugin.json'))['version']=='1.2.0'
+              data=json.loads(z.read('skills/warren-buffett-brain/references/atlas.json'))
+              assert len(data['entries'])==55 and len(data['sources'])==60
+          print('Verified Skills-only 1.2.0 — no remote MCP dependency')
+          PY
+      - name: Commit public release archive
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add dist/warren-buffett-brain-chatgpt-plugin.zip
+          if ! git diff --cached --quiet; then
+            git commit -m "Publish standalone Buffett Brain skills-only 1.2.0 ZIP"
+            git push origin HEAD:main
+          fi
