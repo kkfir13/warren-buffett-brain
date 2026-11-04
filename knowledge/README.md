@@ -17,13 +17,13 @@ The JSON atlas is a **source directory plus a curated selection** of original sh
 2. **Evidence entries**: original summaries of confirmed historical cases and ideas, including errors and counterexamples.
 3. **Retrieval**: deterministic local search, returning document IDs and clickable original-source links. No LLM hallucinations or background scraping.
 4. **Review backlog**: deeper annotation of each yearly letter, annual meeting and major business acquisition is still needed. A source link is not proof every passage has been read.
-5. **Open-core**: software and written summaries are MIT-licensed; ValuEdge price feeds, private finance, user accounts, paid API entitlements and the valuation engine are not licensed into this repository.
+5. **License boundary**: original software and independently written summaries are MIT-licensed; third-party works and ValuEdge's private data, accounts and valuation engine are not included in this repository.
 
 ### Contributing a new entry
 
 Include `id`, `kind`, `year`, `title`, `summary`, `evidence`, `interpretation`, `limitations`, `sourceIds`, `topics`, `companies`, `locator`, `verification`, and `rights`. Use short original prose, not copied paragraphs. Source IDs must already exist in `sources`. Do not label a case as an investment success without period-specific outcome evidence. Run the validator and tests before opening a pull request.
 
-The website uses a versioned copy of this atlas in `public/buffett/atlas.json`; update it from this public file when publishing changes, then check byte equality.
+The research website loads [`knowledge/atlas.json`](atlas.json) directly via `app.js` at the repository root. The packaged ChatGPT Skill uses a separate copied file at `skills/warren-buffett-brain/references/atlas.json`; when changing this canonical atlas, refresh the packaged references with `python3 scripts/build_chatgpt_plugin.py --sync`, then run the validation tests. These are copies of the same research data, not separate publisher sources.
 
 ## Detailed long-form case studies
 

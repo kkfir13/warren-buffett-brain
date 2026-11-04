@@ -5,11 +5,14 @@ description: Apply an independent Buffett-inspired research method to public com
 
 # Buffett Brain — independent value-investing research
 
+**Repository-source instructions:** This root `SKILL.md` describes how to work with a **checked-out or otherwise accessible copy of this repository**. The installable bundled skill is [`skills/warren-buffett-brain/SKILL.md`](skills/warren-buffett-brain/SKILL.md) with its own `references/` folder; the two paths are different. If an AI host has only been given the repository URL or a pasted research prompt, do **not** claim its files were loaded. Read [`AGENTS.md`](AGENTS.md) for the evidence-retrieval protocol and precise data locations.
+
+
 This skill is not affiliated with, endorsed by, or operated by Warren Buffett or Berkshire Hathaway. It does not impersonate him or assert that he personally approves any investment. Use broadly described value-investing principles, not a supposedly proprietary Buffett algorithm.
 
 ## Search the historical evidence atlas FIRST
 
-This open-source package includes `knowledge/atlas.json` with primary Berkshire letters (1977–2024) and the licensed CNBC annual-meeting archive (from 1994) as **links only**, plus independently written, evidence-tagged historical research notes, deal studies, recognized mistakes and book references.
+The repository's `knowledge/atlas.json` indexes Berkshire shareholder letters (1977–2024) and the CNBC annual-meeting archive (from 1994) as **external links only**, plus independently written, evidence-tagged historical research notes, deal studies, recognized mistakes and book references.
 
 When asked a historical question, first search locally for relevant records:
 
