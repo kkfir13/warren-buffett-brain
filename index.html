@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#101b16"><title>Buffett Brain — Open-Source Investment History</title>
+<meta name="description" content="Explore source-linked Buffett investment decisions, Berkshire shareholder letters, historic mistakes, books and interview archives. Independent open-source research.">
+<link rel="stylesheet" href="./styles.css"></head>
+<body>
+<a href="#main" class="skip">Skip to content</a>
+<header class="header"><a class="brand" href="./"><span class="brandicon">B</span> Buffett Brain <small>OPEN SOURCE</small></a>
+<nav aria-label="Main"><a href="#search">Explore</a><a href="#sources">Archive</a><a href="https://github.com/kkfir13/warren-buffett-brain" target="_blank" rel="noopener noreferrer">GitHub ↗</a></nav></header>
+<main id="main">
+<section class="hero"><div class="wrap"><p class="eyebrow">INDEPENDENT · EVIDENCE-LED · OPEN SOURCE</p>
+<h1>Investing history,<br><em>without the mythology.</em></h1>
+<p class="lead">What Buffett bought, why his documented decisions mattered, the mistakes he admitted, and the ideas he developed — all traced to actual Berkshire shareholder letters, filings, recording archives and book references.</p>
+<div class="stats"><span id="count-entries">— annotated research notes</span><span id="count-sources">— original-source links</span><span>Free to study and contribute</span></div></div></section>
+<section class="wrap body" id="search"><p class="eyebrow">RESEARCH THE DECISIONS</p><h2>Search the evidence.</h2>
+<p class="intro">Type a company, transaction, year, person, book or investing question. This is source-grounded retrieval, not a fabricated Buffett conversation.</p>
+<form id="search-form"><label for="query" class="sr-only">Search evidence</label>
+<input id="query" name="q" autocomplete="off" maxlength="200" placeholder="Why did Buffett buy See's Candies?">
+<button type="submit">Search <span aria-hidden="true">→</span></button></form>
+<div class="examples"><button data-example="GEICO" type="button">GEICO</button><button data-example="pricing power" type="button">Pricing power</button>
+<button data-example="Goldman Sachs" type="button">2008 crisis</button><button data-example="Dexter Shoe" type="button">Biggest mistakes</button>
+<button data-example="Benjamin Graham" type="button">The Intelligent Investor</button></div>
+<div id="kinds" class="filters" role="group" aria-label="Research category">
+<button data-kind="all" aria-pressed="true" class="active">All research</button>
+<button data-kind="decision" aria-pressed="false">Deals</button><button data-kind="principle" aria-pressed="false">Principles</button>
+<button data-kind="mistake" aria-pressed="false">Mistakes</button><button data-kind="statement" aria-pressed="false">In his words</button><button data-kind="book" aria-pressed="false">Books</button><button data-kind="interview" aria-pressed="false">Interviews</button></div>
+<p id="status" role="status" aria-live="polite">Loading primary-source index…</p><div id="cards" class="cards"></div><button id="more" hidden type="button" class="more">Show more</button>
+</section>
+<section id="sources" class="archive"><div class="wrap">
+<p class="eyebrow">READ THE ORIGINALS</p><h2>Follow the source,<br><em>not a quote graphic.</em></h2>
+<p class="intro">Open the original documents on the publisher's site. We link the official Berkshire annual letters and CNBC's licensed meeting archive; we do not redistribute copyrighted full texts or videos.</p>
+<h3>Berkshire letters, 1977–2024</h3><div id="years" class="years"></div>
+<div class="archive-links"><a href="https://www.berkshirehathaway.com/letters/letters.html" rel="noopener noreferrer" target="_blank">Official Berkshire letter index ↗</a>
+<a href="https://www.berkshirehathaway.com/1996ar/manual.html" rel="noopener noreferrer" target="_blank">1996 Owner's Manual ↗</a>
+<a href="https://buffett.cnbc.com/annual-meetings/" rel="noopener noreferrer" target="_blank">CNBC original meeting recordings ↗</a></div>
+</div></section>
+<section class="wrap outro"><p class="eyebrow">THE ENTIRE RESEARCH ENGINE IS OPEN</p><h2>Inspect the sources.<br>Challenge the interpretation.</h2>
+<p>The knowledge index, deterministic search program, evidence notes and original summaries are MIT-licensed. The optional ValuEdge connection is a separate product, never a prerequisite. Source text and third-party books keep their own copyrights.</p>
+<div class="ctas"><a class="primary" href="https://github.com/kkfir13/warren-buffett-brain" target="_blank" rel="noopener noreferrer">Explore the GitHub project ↗</a><a class="secondary" href="https://valuedge.app/buffett" target="_blank" rel="noopener noreferrer">ValuEdge quantitative preview ↗</a></div>
+</section></main><footer><div class="wrap">Independent Buffett-inspired educational project. No affiliation or endorsement by Warren Buffett or Berkshire Hathaway. Not investment advice. Books, letters and media remain with original rights holders.</div></footer>
+<script defer src="./app.js"></script></body></html>
