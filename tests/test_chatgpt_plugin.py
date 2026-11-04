@@ -29,7 +29,7 @@ class ChatGPTPluginTests(unittest.TestCase):
     def test_combined_mcp_package(self):
         with tempfile.TemporaryDirectory() as td:
             path = Path(td) / "with-mcp.zip"
-            url = "https://brain.example.org/mcp"
+            url = "https://buffett-test.workers.dev/mcp"
             subprocess.run([sys.executable, str(ROOT / "scripts/build_chatgpt_plugin.py"),
                             "--mcp-url", url, "--output", str(path)],
                            check=True, capture_output=True, text=True)
