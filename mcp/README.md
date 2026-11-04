@@ -24,6 +24,20 @@ The deploy command displays the actual HTTPS hostname assigned to your Worker, t
 
 Changes to `knowledge/atlas.json` must be redeployed to update the MCP corpus. The Worker only retrieves bundled public historical research and does not access private databases or live prices. To limit unexpected usage and cost, turn on Cloudflare rate limits and monitor request volume before promoting it.
 
+## Generate the correct With MCP ZIP for OpenAI submission
+
+The original `dist/warren-buffett-brain-chatgpt-plugin.zip` is **Skills only** and does not contain a server reference. After your public MCP deployment is live, build a **separate** plugin ZIP with the actual MCP URL:
+
+```bash
+python3 scripts/build_chatgpt_plugin.py --mcp-url "https://YOUR-REAL-DEPLOYED-HOST/mcp"
+```
+
+This validates the address and creates `dist/warren-buffett-brain-with-mcp.zip`, including `mcp.json` and the original skill research bundle. The placeholder shown above must be replaced with your actual verified hostname.
+
+**No local Python?** In the GitHub repository open **Actions → Build Buffett Brain With MCP submission ZIP (manual) → Run workflow** and enter the *real deployed* MCP URL. Download the generated ZIP artifact from that workflow run. This manually triggered packaging job does not run on every commit.
+
+See [the five positive and three negative MCP review scenarios](REVIEW_CASES.md), and the [privacy statement](../PRIVACY.md) and [use terms](../TERMS.md).
+
 ## Test the *actual deployed* endpoint
 
 Replace `MCP_URL` with the URL printed by Wrangler:

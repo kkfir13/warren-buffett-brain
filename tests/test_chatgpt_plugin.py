@@ -26,6 +26,28 @@ class ChatGPTPluginTests(unittest.TestCase):
         for case in (ROOT / "deep-dives").glob("*.md"):
             self.assertEqual(case.read_bytes(), (bundled / "deep-dives" / case.name).read_bytes())
 
+    def test_combined_mcp_package(self):
+        with tempfile.TemporaryDirectory() as td:
+            path = Path(td) / "with-mcp.zip"
+            url = "https://brain.example.org/mcp"
+            subprocess.run([sys.executable, str(ROOT / "scripts/build_chatgpt_plugin.py"),
+                            "--mcp-url", url, "--output", str(path)],
+                           check=True, capture_output=True, text=True)
+            with ZipFile(path) as z:
+                mcp = json.loads(z.read("mcp.json"))
+                self.assertEqual(mcp["mcpServers"]["warren-buffett-brain"]["url"], url)
+                self.assertEqual(mcp["mcpServers"]["warren-buffett-brain"]["type"], "streamable-http")
+                self.assertIn("skills/warren-buffett-brain/SKILL.md", z.namelist())
+
+    def test_rejects_local_mcp_url(self):
+        with tempfile.TemporaryDirectory() as td:
+            for url in ("http://localhost:3000/mcp", "https://localhost/mcp", "https://YOUR-HOSTNAME/mcp"):
+                proc = subprocess.run(
+                    [sys.executable, str(ROOT / "scripts/build_chatgpt_plugin.py"),
+                     "--mcp-url", url, "--output", str(Path(td) / "invalid.zip")],
+                    capture_output=True, text=True)
+                self.assertNotEqual(proc.returncode, 0, url)
+
     def test_clean_plugin_zip(self):
         with tempfile.TemporaryDirectory() as td:
             path = Path(td) / "test.zip"

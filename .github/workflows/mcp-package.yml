@@ -1,0 +1,30 @@
+name: Build Buffett Brain With MCP submission ZIP (manual)
+on:
+  workflow_dispatch:
+    inputs:
+      mcp_url:
+        description: "Deployed, publicly reachable HTTPS MCP endpoint ending /mcp"
+        required: true
+        type: string
+permissions:
+  contents: read
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    env:
+      MCP_URL: ${{ inputs.mcp_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python3 scripts/validate_knowledge.py
+      - run: python3 -m unittest discover -s tests -q
+      - run: python3 scripts/build_chatgpt_plugin.py --mcp-url "$MCP_URL"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: warren-buffett-brain-with-mcp
+          path: dist/warren-buffett-brain-with-mcp.zip
+          if-no-files-found: error
+          retention-days: 1
