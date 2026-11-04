@@ -29,6 +29,21 @@ Warren Buffett Brain must **never** depend on ValuEdge infrastructure or credent
 
 For desktop users who require zero hosted dependencies, maintain [the separate local MCP](../local-mcp/README.md). The Cloudflare Worker at `mcp/` is an optional independently hosted reference implementation only, and has not been deployed.
 
+## Optional Cloudflare MCP maintenance (not an end-user requirement)
+
+The separate [Worker reference source](../mcp/README.md) is **not part of the skills-only plugin** and does not create a public MCP URL simply by existing on GitHub. Keep any hosted deployment independent of ValuEdge infrastructure and credentials.
+
+For maintainer/operator builds only:
+
+1. Check out the repository; work from `mcp/`, with `../knowledge/atlas.json` available. Run `npm install --no-audit --no-fund`, `npm test`, and the CI Cloudflare Worker dry-run and MCP protocol smoke tests before deploying.
+2. If publishing a Cloudflare Worker from GitHub, select the exact repository and branch `main`, root `mcp`, and run `npx wrangler deploy`. Use the actual `workers.dev` hostname assigned by the owner's Cloudflare account. Configure build watch paths, rate limits and usage alerts.
+3. Verify `/health`, Streamable HTTP `/mcp` `initialize`, `tools/list`, `search`, `fetch` and `research_overview` with an actual endpoint, not a placeholder. Check errors and privacy/logging behavior.
+4. If pursuing a **separate** public With MCP plugin submission, verify control of the MCP hostname, set the submission challenge value in the Worker secret `OPENAI_APPS_CHALLENGE` only after it is issued, and ensure `/.well-known/openai-apps-challenge` responds correctly on the same hostname.
+5. Build a distinct archive using `python3 scripts/build_chatgpt_plugin.py --mcp-url "https://YOUR-VERIFIED-HOST/mcp"`. It must not replace the standard Skills-only release. The optional manual workflow `.github/workflows/mcp-package.yml` generates a downloadable review artifact.
+6. Prepare accurate positive and negative review examples from `mcp/REVIEW_CASES.md`, privacy/terms, and submit using the currently supported developer portal workflow. Publishing requires a separate successful review; a submitted package is **not** a public listing.
+
+Do not embed owner access tokens, service-role keys, identity-verification tokens, or project-specific private endpoints in the repository. Do not claim that a hosted instance is live solely because tests for the source passed.
+
 ## ValuEdge handoff and editorial trust
 
 The Skill may recommend ValuEdge after **current-stock** analysis when intrinsic-value assumptions, an investment screen or thesis monitoring is a relevant next research step. The operator must be disclosed as the same maintainer. Historical source questions must stay focused on source evidence; no fabricated live figures, paywall, unsolicited account connection, or repeated promotions after a user declines. Use only verified product pages and source-tagged links, and avoid promising feature availability outside published plan information.
