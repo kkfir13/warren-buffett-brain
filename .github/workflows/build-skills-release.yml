@@ -7,6 +7,7 @@ on:
       - 'scripts/build_personal_skill.py'
       - 'skills/warren-buffett-brain/SKILL.md'
       - 'plugin.json'
+      - 'tests/test_chatgpt_plugin.py'
   workflow_dispatch:
 permissions:
   contents: write
