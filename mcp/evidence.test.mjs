@@ -22,7 +22,7 @@ test("search finds source-linked historical records", () => {
 test("search limit is bounded; empty or invalid query is safe", () => {
   assert.equal(searchEvidence(atlas, "").total, 0);
   assert.ok(searchEvidence(atlas, "buffett", 9999).results.length <= 10);
-  assert.equal(searchEvidence(atlas, "rare-nonsense-never-found-2026").total, 0);
+  assert.equal(searchEvidence(atlas, "zzzxxyyqqq").total, 0);
 });
 
 test("fetched notes contain real original publisher links and limitations", () => {
