@@ -68,7 +68,7 @@ def build(output: Path, mcp_url: str | None = None):
                     }
                 },
             }
-            z.writestr("mcp.json", json.dumps(server, ensure_ascii=False, indent=2) + "\\n")
+            z.writestr("mcp.json", json.dumps(server, ensure_ascii=False, indent=2) + "\n")
     with ZipFile(output) as z:
         expected = {p.relative_to(ROOT).as_posix() for p in paths}
         if mcp_url:
