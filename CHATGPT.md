@@ -2,7 +2,7 @@
 
 Warren Buffett Brain is a **free, independent source-linked investment research project**. There are several ways to use it, depending on whether you only want the research approach or want an AI assistant to read the actual historical notes.
 
-## 1. Try the method in ChatGPT now
+## Option 1: Try the method in ChatGPT now
 
 This is the easiest option and works **without installing this project**.
 
@@ -22,7 +22,7 @@ Useful follow-ups: **"What evidence would disprove the moat?"**, **"What capital
 
 **What this does not do:** the prompt is not a plugin installation. It **does not** automatically read `knowledge/atlas.json`, the eight case studies or any other GitHub file. ChatGPT answers using only the material and tools actually available in that conversation. To use the project's evidence, provide files or give an assistant with repository access the instructions in [AGENTS.md](AGENTS.md).
 
-## 2. Import the research Skill if your account supports it
+## Option 2: Import the research Skill if your account supports it
 
 ChatGPT Personal Skills are generally available to eligible **Business, Enterprise, Healthcare and Edu** accounts, depending on workspace permissions and supported surface. Availability differs by account; do not assume this menu appears for everyone. See the official [Skills in ChatGPT help article](https://help.openai.com/en/articles/20001066-skills-in-chatgpt/).
 
@@ -35,13 +35,13 @@ This is a real bundled Skill containing historical research notes, source links 
 
 **Do not upload the plugin ZIP** (`dist/warren-buffett-brain-chatgpt-plugin.zip`) into the Personal Skills uploader. That ZIP has `plugin.json` and is a different distribution format. Neither ZIP connects to a brokerage account, ValuEdge, a remote MCP or a live market-price feed.
 
-## 3. Public plugin availability
+## Option 3: Public plugin availability
 
 Warren Buffett Brain is **not publicly listed** in ChatGPT's Plugins Directory as of the last repository update. The [Skills-only plugin package](dist/warren-buffett-brain-chatgpt-plugin.zip) exists, but a ZIP on GitHub is **not** an approved, installable public listing. Do not assume the project has an OpenAI-verified badge or a public one-click installation URL.
 
 When an actual public listing is confirmed, this section can link to it. Until then, use the prompt above, an eligible Personal Skill import, or direct access to the open-source research.
 
-## 4. Local MCP for compatible desktop clients
+## Option 4: Local MCP for compatible desktop clients
 
 If your AI client supports **local stdio MCP**, you can run the [Python adapter](local-mcp/README.md) and retrieve source-linked notes with `search`, `fetch` and `research_overview`. This requires Python and a compatible desktop MCP client. It is **not** a public ChatGPT web/mobile connector.
 
@@ -49,7 +49,7 @@ The repository also contains an **optional self-hostable Cloudflare Worker refer
 
 The prior experimental Buffett Brain MCP endpoint on ValuEdge's Supabase project was decommissioned; do not use or share it as a live connection.
 
-## 5. Questions that work well
+## Questions that work well
 
 - **History:** Why did Berkshire buy GEICO, and how did the investment evolve? Link original sources.
 - **Moats:** What did See's Candies demonstrate about pricing power and economic goodwill?
