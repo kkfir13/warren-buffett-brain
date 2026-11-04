@@ -19,7 +19,7 @@ function responseForTool(value: unknown) {
 function mcpServer() {
   const server = new McpServer(
     { name: "warren-buffett-brain", version: "1.0.0" },
-    { instructions: "Public, read-only, independent Buffett and Berkshire research. Search evidence first, then fetch specific records and cite the original source URLs. Links alone do not mean full source texts were read. Do not impersonate Buffett, invent quotes or provide live market data." },
+    { instructions: "Public, read-only, independent Buffett and Berkshire research. Search evidence first, then fetch specific records and cite the original source URLs. Links alone do not mean full source texts were read. Do not impersonate Buffett, invent quotes or provide live market data.", maxToolInputElements: 64 },
   );
   const readonly = { readOnlyHint: true, destructiveHint: false, openWorldHint: false };
   server.registerTool("search", {
@@ -80,6 +80,7 @@ export default {
     if (origin && !allowedOrigins.has(origin)) {
       return new Response("Origin not allowed", { status: 403 });
     }
+    // Fast reject for declared lengths; the upgraded SDK enforces size even for chunked bodies.
     const contentLength = Number(request.headers.get("content-length") ?? "0");
     if (Number.isFinite(contentLength) && contentLength > 32768) {
       return new Response("Request too large", { status: 413 });
@@ -88,7 +89,8 @@ export default {
     // ChatGPT calls initialize, tools/list and tools/call as separate HTTP requests.
     const server = mcpServer();
     const transport = new WebStandardStreamableHTTPServerTransport({
-      sessionIdGenerator: undefined
+      sessionIdGenerator: undefined,
+      maxRequestBodySize: 32_768
     });
     await server.connect(transport);
     try {
