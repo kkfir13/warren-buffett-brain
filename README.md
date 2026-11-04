@@ -11,9 +11,17 @@ The project also has a static website on GitHub Pages: [Warren Buffett Brain](ht
 
 After GitHub Pages publishes a commit, use [Google Search Console](https://search.google.com/search-console) to verify the URL-prefix property `https://kkfir13.github.io/warren-buffett-brain/`, submit the `sitemap.xml` URL and inspect/request indexing for the homepage. Google decides whether to crawl and index the site; publishing or submitting does not guarantee rankings.
 
-## Run the research website
+## Use Warren Buffett Brain with ChatGPT
 
-Requires Python 3 and a browser; no cloud AI, credentials, npm install, paid API or account.
+**No localhost setup is required for end users.** This repository now includes a packaged, self-contained **skills-only ChatGPT Plugin** with source-linked research and a repeatable analysis workflow. See the [ChatGPT integration and publication guide](CHATGPT.md).
+
+**Publication status:** An open-source GitHub repository is not automatically a ChatGPT plugin. The package must pass OpenAI's review and be explicitly published in its Plugins Directory before a public install link can work. Do not confuse the public [research website](https://kkfir13.github.io/warren-buffett-brain/) with a ChatGPT plugin listing.
+
+Developers can generate the submission ZIP with `python3 scripts/build_chatgpt_plugin.py`; the standalone skill and its offline reference corpus live under [skills/warren-buffett-brain/](skills/warren-buffett-brain/).
+
+## Run locally (developers only)
+
+This section is **only** for previewing the static website on your own computer. Requires Python 3 and a browser; no cloud AI, credentials, npm install, paid API or account.
 
 ```bash
 git clone https://github.com/kkfir13/warren-buffett-brain.git buffett-brain
@@ -21,11 +29,11 @@ cd buffett-brain
 python3 -m http.server 8000
 ```
 
-Visit **http://localhost:8000/** and search: `See's Candies`, `GEICO`, `Dexter Shoe`, `Goldman Sachs 2008`, `circle of competence` or `Benjamin Graham`.
+**On the computer running the server**, visit **http://localhost:8000/** and search: `See's Candies`, `GEICO`, `Dexter Shoe`, `Goldman Sachs 2008`, `circle of competence` or `Benjamin Graham`.
 
-### Install the AI skill
+### AI research instructions
 
-[SKILL.md](SKILL.md) is a portable Agent Skills instruction file for Claude Code, Codex, and compatible assistants. It searches the local evidence registry, demands primary-source citations, distinguishes factual history from our commentary, and refuses to fabricate Buffett opinions. It is not an official Buffett persona.
+The root [SKILL.md](SKILL.md) documents the original offline research workflow. The **ChatGPT-compatible package** uses [skills/warren-buffett-brain/SKILL.md](skills/warren-buffett-brain/SKILL.md) and **bundled sources** so end users don't need to run Python. Both are independent Buffett-inspired research methods, not an official Buffett persona.
 
 ### Offline research commands
 
@@ -43,7 +51,9 @@ node --check app.js
 - **[index.html](index.html), [app.js](app.js), [styles.css](styles.css):** responsive static research website suitable for basic GitHub Pages hosting.
 - **[knowledge/atlas.json](knowledge/atlas.json):** machine-readable, externally sourced research registry.
 - **[deep-dives/](deep-dives/):** historically grounded case studies for See's, GEICO, Coca-Cola, General Re/Dexter, Goldman, BNSF, Graham/Munger and the textiles/insurance pivot.
-- **[SKILL.md](SKILL.md):** research instructions for compatible AI agents.
+- **[SKILL.md](SKILL.md):** original offline research instructions; **[skills/warren-buffett-brain/](skills/warren-buffett-brain/):** ChatGPT plugin skill with bundled research.
+- **[plugin.json](plugin.json), [CHATGPT.md](CHATGPT.md):** portable plugin manifest and verified publication guidance.
+- **[scripts/build_chatgpt_plugin.py](scripts/build_chatgpt_plugin.py):** repeatable source sync and submission-ZIP builder.
 - **[scripts/](scripts/), [tests/](tests/):** local search, research integrity, offline quantitative screening, unit tests.
 - **[knowledge/README.md](knowledge/README.md):** source rights, attribution and expansion policies.
 
@@ -67,4 +77,4 @@ GitHub repository description: *Open-source Warren Buffett & Berkshire Hathaway 
 
 Recommended GitHub Topics: `buffett-principles`, `warren-buffett`, `buffett`, `value-investing`, `berkshire-hathaway`, `shareholder-letters`, `investment-research`, `ai-skills`, `agent-skills`.
 
-**Repository status:** This is the independent, public Warren Buffett Brain source repository. After GitHub Pages is enabled, the project can also be explored in a browser without cloning.
+**Repository status:** Open-source research and plugin package are public; public ChatGPT plugin installation remains subject to OpenAI review and publication. GitHub Pages is a separate static website.
