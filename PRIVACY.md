@@ -1,19 +1,27 @@
 # Warren Buffett Brain — privacy and data handling
 
-Updated 4 November 2026
+Updated 5 November 2026
 
-This document describes the open-source research website, the packaged ChatGPT skill and the optional local MCP adapter. The project does not currently operate a public remote MCP server. It requires no Buffett Brain account.
+Warren Buffett Brain is an independent open-source project. This notice covers the research website, source-linked packaged skills, optional desktop MCP adapter and separately packaged ValuEdge MCP-backed plugin.
 
-**Accounts and financial data:** The website, bundled skill and optional local MCP adapter require no personal account or broker connection. They do not request brokerage credentials, execute trades, read private portfolios or expose ValuEdge customer data.
+## Bundled historical research
 
-**Queries:** The local MCP adapter processes search terms and record IDs on the user's machine. In ChatGPT, a bundled skill's requests and responses are processed according to ChatGPT's applicable privacy controls. The source code does not write search terms into an application database or create user profiles. The software returns source-linked historical research notes from a public, committed knowledge registry.
+The public website and bundled historical research need no Buffett Brain account or brokerage connection. The archive contains original historical notes and source links. Reading packaged content does not by itself send a user portfolio to this project's own database. AI hosts and GitHub Pages may process ordinary requests and access records under their respective policies.
 
-**Hosting and technical records:** GitHub Pages hosts the website; the standalone skill does not operate its own hosted backend. GitHub and the user's AI host may process normal technical requests under their own policies. If a user chooses to self-host the optional remote Worker implementation, that operator is separately responsible for its service logs. This is not a promise that an infrastructure provider retains no technical data.
+## MCP-enabled release with ValuEdge
 
-**External sources:** Research answers link to outside publishers, including Berkshire Hathaway and CNBC. Opening an external link takes you to that publisher's website and privacy practices.
+A new MCP-backed package can connect to the independent ValuEdge remote server at https://valuedge.app/mcp. It is a separate commercial product operated by the same maintainer. Public research tools can receive stock identifiers, search terms, comparison symbols and bounded screening parameters, then return dated valuations, fundamentals and research data without a ValuEdge login.
 
-**Feedback:** GitHub Issues may publicly display information you submit there. Do not submit private financial, account, or identity data to public issues.
+ValuEdge's private portfolio, watchlist and Smart Alerts tools require the user's own authorization and eligible Unlimited account access. When users intentionally request these private features, authorized personal investment information can be returned by ValuEdge to the chosen AI host. The MCP server is read-only and is not a trading or transaction interface. Merely reading the historical skill does not authorize private account access.
 
-**Contact:** Use the project's [GitHub Issues](https://github.com/kkfir13/warren-buffett-brain/issues) for questions about the source code or data handling.
+ValuEdge's processing, technical records and data categories are described in its [Privacy Policy](https://valuedge.app/privacy) and [Terms](https://valuedge.app/terms). The AI client may separately process prompts and tool results under its privacy policy. User-controlled disconnect options depend on the MCP host.
 
-No feature in the published source code sells personal data or sends user queries to a commercial LLM API. Hosting operators should review their own logs, security settings and actual data flows before publishing this policy for their instance.
+## Local adapter and independent hosting
+
+The optional local stdio research adapter processes historical search terms on the user's computer and does not need ValuEdge. A self-hosted remote copy of the open-source Worker may generate logs according to its separate operator's hosting choices.
+
+## Third parties and feedback
+
+GitHub Pages hosts the project website, and research links lead to outside publishers. GitHub Issues are public; do not submit private financial or identity data in an issue.
+
+For general questions, use the project's [GitHub Issues](https://github.com/kkfir13/warren-buffett-brain/issues).

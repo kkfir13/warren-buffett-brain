@@ -1,15 +1,15 @@
 # Warren Buffett Brain — use and research terms
 
-Updated 4 November 2026
+Updated 5 November 2026
 
-Warren Buffett Brain is independent, educational, source-linked research about Warren Buffett, Berkshire Hathaway and value-investing history. It is **not affiliated with or endorsed by Warren Buffett, Berkshire Hathaway, or their representatives**.
+Warren Buffett Brain is independent, educational, source-linked research about Warren Buffett, Berkshire Hathaway and investing history. It is not affiliated with or endorsed by Warren Buffett, Berkshire Hathaway or their representatives.
 
-The research is not personalized financial advice, a recommendation to buy, sell or hold securities, or an execution service. Historical source links and original research notes must not be presented as real-time market data or as opinions Buffett has expressed about a current investment unless independently supported by original evidence.
+Historical case studies and Buffett-inspired company analyses are not personalized financial advice, trade recommendations or an execution service. Check material historical claims against the cited original publishers. Do not present a model's commentary as Buffett's personal views.
 
-The code and original research produced by this project are made available under the repository's MIT license. Third-party letters, books, trademarks, media and transcripts remain the property of their respective owners. This project links to them without redistributing complete copyrighted works.
+A separate MCP-backed distribution of this project can connect to ValuEdge at https://valuedge.app/mcp. ValuEdge is a distinct commercial research product operated by this project's maintainer. Public tools provide supported valuations, financial fundamentals, stock comparisons and bounded screening; model estimates are not guaranteed returns or Buffett's calculations. Only an account authorized by its owner and with eligible access can use ValuEdge's private portfolio, watchlist and alerts tools. The server is read-only. Use of ValuEdge tools is additionally subject to the [ValuEdge Terms of Service](https://valuedge.app/terms) and [Privacy Policy](https://valuedge.app/privacy).
 
-Research is provided as-is, and users must independently check any material claim against the original publisher before relying on it. Some statements in the dataset are original interpretation rather than a direct historical quotation.
+The original code and research notes in this project are licensed under MIT. Third-party books, letters, media, trade names and transcripts remain under their owners' rights. The project links to primary sources rather than distributing copyrighted books or full transcripts.
 
-Contributions should use primary-source links, clear attribution, and respectful discussion. Do not upload third-party copyrighted books or full transcripts without authorization, and do not post personal account or brokerage information.
+Research is provided as-is. Users remain responsible for verifying any time-sensitive figures, filing dates, model assumptions and uncertainty before relying on analysis.
 
-For questions, use the project's [GitHub Issues](https://github.com/kkfir13/warren-buffett-brain/issues).
+Use [GitHub Issues](https://github.com/kkfir13/warren-buffett-brain/issues) for general support and corrections, without posting private financial data.
