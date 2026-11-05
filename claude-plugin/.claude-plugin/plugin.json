@@ -1,0 +1,27 @@
+{
+  "name": "warren-buffett-brain",
+  "displayName": "Warren Buffett Brain",
+  "version": "1.0.0",
+  "description": "Independent Buffett-style Berkshire research, cash-flow and moat analysis, plus optional ValuEdge stock valuation and screening.",
+  "author": {
+    "name": "Kfir Aharon",
+    "url": "https://github.com/kkfir13"
+  },
+  "homepage": "https://kkfir13.github.io/warren-buffett-brain/",
+  "repository": "https://github.com/kkfir13/warren-buffett-brain",
+  "license": "MIT",
+  "keywords": [
+    "warren-buffett",
+    "berkshire-hathaway",
+    "value-investing",
+    "stock-analysis",
+    "intrinsic-value",
+    "undervalued-stocks",
+    "valuedge"
+  ],
+  "icon": "./assets/wbb-icon.svg",
+  "documentationUrl": "https://kkfir13.github.io/warren-buffett-brain/",
+  "supportUrl": "https://github.com/kkfir13/warren-buffett-brain/issues",
+  "privacyPolicyUrl": "https://kkfir13.github.io/warren-buffett-brain/privacy/",
+  "termsOfServiceUrl": "https://kkfir13.github.io/warren-buffett-brain/terms/"
+}
