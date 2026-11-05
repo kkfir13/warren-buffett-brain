@@ -1,0 +1,30 @@
+name: Build Warren Buffett Brain + ValuEdge MCP ZIP
+on:
+  push:
+    branches:
+      - valuedge-mcp-submission
+    paths:
+      - scripts/build_valuedge_mcp_plugin.py
+      - .github/workflows/build-valuedge-mcp-plugin.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate and rebuild independent source archive
+        run: python3 scripts/build_chatgpt_plugin.py
+      - name: Build ValuEdge MCP submission archive
+        run: python3 scripts/build_valuedge_mcp_plugin.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: warren-buffett-brain-valuedge-mcp
+          path: dist/warren-buffett-brain-valuedge-mcp.zip
+          if-no-files-found: error
+          retention-days: 7
